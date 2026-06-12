@@ -7,6 +7,13 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem 'jemoji'
   gem 'webrick', '~> 1.8'
+  gem 'csv'
+  gem 'base64'
+  gem 'logger'
+  gem 'ostruct'
+  gem 'bigdecimal'
+  gem 'json'
+  gem 'safe_yaml'
 end
 
 gem 'github-pages'
