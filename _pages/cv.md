@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-[Download CV (PDF)](/files/shiiyu-yue-cv.pdf){: .btn .btn--primary}
+[Download CV (PDF)](/files/shiyu-yue-cv.pdf){: .btn .btn--primary}
 
 ## Education
 
