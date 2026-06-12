@@ -23,7 +23,7 @@ repository               : "xingjiyue/xingjiyue.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "photo.jpg"
   name             : "Shiyu Yue"
   pronouns         : # example: "she/her"  
   bio              : "MPhil in Physics at CUHK. Cosmological statistics, interpretable ML, and Bayesian data analysis."
