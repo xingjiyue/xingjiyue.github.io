@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Shiyu Yue"
+title                    : "ShiyuYUE"
 title_separator          : "-"
-name                     : &name "Shiyu Yue"
+name                     : &name "ShiyuYUE"
 description              : &description "MPhil Physics student at CUHK — cosmology, interpretable ML, and large-scale data analysis"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://xingjiyue.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -24,7 +24,7 @@ repository               : "xingjiyue/xingjiyue.github.io"
 author:
   # Biographic information
   avatar           : "photo.jpg"
-  name             : "Shiyu Yue"
+  name             : "ShiyuYUE"
   pronouns         : # example: "she/her"  
   bio              : "MPhil in Physics at CUHK. Cosmological statistics, interpretable ML, and Bayesian data analysis."
   location         : "Hong Kong SAR, China"
