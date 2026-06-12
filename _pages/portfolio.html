@@ -1,38 +1,34 @@
 ---
-layout: folio_base
+layout: archive
 title: "Projects"
 permalink: /portfolio/
+author_profile: true
 ---
 
-<section>
-  <p class="kicker">Selected projects</p>
-  <h1>Projects</h1>
-  <p class="lead">Scientific computing, interpretable machine learning, Bayesian inference, and multimodal astronomical data pipelines.</p>
-</section>
+{% include base_path %}
 
-<section class="project-grid">
-  <article class="project-card">
-    <p class="kicker">Scientific computing</p>
-    <h2><a href="/portfolio/2024-10-01-3pcf-fast-algorithm/">Fast O(N log N) 3PCF Algorithm for Cosmology</a></h2>
-    <p class="tagline">C++/OpenMP · large-scale simulation · algorithm design · numerical validation</p>
-    <p>Developed a scalable three-point correlation-function pipeline by reformulating binned pair counting as in-situ convolution, enabling measurements on MDPL2-scale simulations.</p>
-  </article>
-  <article class="project-card">
-    <p class="kicker">Interpretable AI</p>
-    <h2><a href="/portfolio/2024-12-01-frdeep-xai/">Interpretable Radio Galaxy Classification with FR-DEEP</a></h2>
-    <p class="tagline">PyTorch · CNN · LIME · image segmentation · failure analysis</p>
-    <p>Built a CNN + LIME workflow for radio-galaxy morphology classification, using local explanations to audit whether model attention follows physical source morphology.</p>
-  </article>
-  <article class="project-card">
-    <p class="kicker">Bayesian modelling</p>
-    <h2><a href="/portfolio/2024-08-01-cloudy-manga/">Photoionisation Model Inference with Cloudy and MaNGA</a></h2>
-    <p class="tagline">Python · Cloudy · MaNGA · KDE · RBF interpolation · Bayesian inference</p>
-    <p>Built a modelling pipeline for testing whether photoionisation models can reproduce multiple optical emission-line diagnostics simultaneously in star-forming galaxies.</p>
-  </article>
-  <article class="project-card">
-    <p class="kicker">Survey-data pipelines</p>
-    <h2><a href="/portfolio/2025-03-01-cspn-multimodal/">Multimodal Identification of Planetary Nebula Central Stars</a></h2>
-    <p class="tagline">Python · catalogue cross-matching · Gaia DR3 · PanSTARRS · DECaPS</p>
-    <p>Developed a reproducible candidate-selection workflow for planetary-nebula central stars and extended it toward imaging plus astrometric multimodal classification.</p>
-  </article>
-</section>
+<p>Selected projects showing my work in scientific computing, interpretable machine learning, Bayesian inference, and multimodal astronomical data pipelines.</p>
+
+<h2>Scientific computing</h2>
+
+<h3><a href="/portfolio/2024-10-01-3pcf-fast-algorithm/">Fast O(N log N) 3PCF Algorithm for Cosmology</a></h3>
+<p><em>C++/OpenMP · large-scale simulation · algorithm design · binning-aware theory · numerical validation</em></p>
+<p>Developed a scalable three-point correlation-function pipeline by reformulating binned pair counting as in-situ convolution, enabling measurements on MDPL2-scale simulations.</p>
+
+<h2>Interpretable AI</h2>
+
+<h3><a href="/portfolio/2024-12-01-frdeep-xai/">Interpretable Radio Galaxy Classification with FR-DEEP</a></h3>
+<p><em>PyTorch · CNN · LIME · image segmentation · model validation · failure analysis</em></p>
+<p>Built a CNN + LIME workflow for radio-galaxy morphology classification, using local explanations to audit whether model attention follows physical source morphology.</p>
+
+<h2>Bayesian modelling and IFU spectroscopy</h2>
+
+<h3><a href="/portfolio/2024-08-01-cloudy-manga/">Photoionisation Model Inference with Cloudy and MaNGA</a></h3>
+<p><em>Python · Cloudy · MaNGA · KDE · RBF interpolation · Bayesian inference · high-dimensional diagnostics</em></p>
+<p>Built a modelling pipeline for testing whether photoionisation models can reproduce multiple optical emission-line diagnostics simultaneously in star-forming galaxies.</p>
+
+<h2>Multimodal survey-data pipelines</h2>
+
+<h3><a href="/portfolio/2025-03-01-cspn-multimodal/">Multimodal Identification of Planetary Nebula Central Stars</a></h3>
+<p><em>Python · catalogue cross-matching · Gaia DR3 · PanSTARRS · DECaPS · multimodal data fusion</em></p>
+<p>Developed a reproducible candidate-selection workflow for planetary-nebula central stars and extended it toward imaging plus astrometric multimodal classification.</p>
