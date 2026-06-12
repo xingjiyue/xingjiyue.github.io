@@ -11,31 +11,34 @@ redirect_from:
 
 ## Education
 
-**MPhil in Physics**, The Chinese University of Hong Kong, Aug 2024–Present
+**MPhil in Physics**, The Chinese University of Hong Kong, Aug 2024–Present  
+Research areas: photoionisation modelling, integral-field spectroscopy, Bayesian inference, and computational astrophysics.
 
-**BSc in Physics**, Sun Yat-sen University, Sep 2020–Jul 2024 — GPA 3.9 / 4.0
+**BSc in Physics**, Sun Yat-sen University, Sep 2020–Jul 2024 — GPA 3.9 / 4.0  
+Undergraduate research: fast correlation-function algorithms for large-scale structure and interpretable machine learning for radio-galaxy morphology.
 
 ## Research Experience
 
 **How to Fit All Emission Lines Simultaneously with Photoionisation Models**, CUHK, Aug 2024–Present
-: Built a Python pipeline for MaNGA integral-field spectroscopy data; parallelised Cloudy photoionisation model grids across metallicity and abundance parameters; used 3D line-ratio reprojections and Bayesian inference to evaluate model-data tension. Revised models halve the [S III] discrepancy while preserving agreement in standard line ratios.
+: Built a Python pipeline for MaNGA integral-field spectroscopy data; parallelised Cloudy photoionisation model grids across metallicity, ionisation parameter, abundance, and SED assumptions; used 3D line-ratio reprojections, KDE, RBF interpolation, and Bayesian inference to evaluate model-data tension in classical and [S III]-sensitive diagnostics.
 
 **A Fast Statistical Algorithm for Cosmology Based on Multiscale Analysis**, Sun Yat-sen University, Oct 2021–Oct 2024
-: Developed an O(N log N) three-point correlation function algorithm treating binned pair-counting as in-situ convolution; implemented in C++ with OpenMP; validated on MDPL2 dark-matter simulations (>10⁸ particles); tested filtering strategies on Quijote halo catalogues.
+: Developed an O(N log N) three-point correlation-function algorithm treating binned pair-counting as in-situ convolution; implemented in C++ with OpenMP; validated on MDPL2 dark-matter simulations with more than 100 million particles; tested filtering strategies on Quijote halo catalogues; led first-author MNRAS paper.
 
 **Explainable AI for Radio Galaxy Morphology Classification**, XJTLU & SYSU, Jul 2021–Aug 2021, Sep 2022–Dec 2024
-: Designed a CNN classifier for FR-DEEP radio galaxy data; built a LIME-based interpretation workflow with segmentation and custom visualisation to diagnose model attention and misclassification.
+: Designed a CNN classifier for FR-DEEP radio-galaxy data; built a LIME-based interpretation workflow with Felzenszwalb segmentation and custom saliency visualisation; diagnosed model attention, label inconsistency, and failure modes.
 
 **Hunting Central Stars of Round Galactic Planetary Nebulae**, HKU, Sep 2023–Dec 2023, Sep 2025–Present
-: Cross-matched HASH catalogue with PanSTARRS and DECaPS DR2 to identify CSPN candidates; quantified central-star offsets and validated with Gaia DR3. Ongoing multimodal extension using IPHAS, VPHAS+, and Gaia photometry.
+: Cross-matched HASH with PanSTARRS and DECaPS DR2 to identify CSPN candidates; quantified central-star offsets and validated candidates with Gaia DR3. Ongoing multimodal extension uses IPHAS, VPHAS+, and Gaia photometry.
 
-## Skills
+## Technical Skills
 
-**Languages:** Python, C++, LaTeX \
-**ML & Data:** PyTorch, NumPy, SciPy, Pandas, Xarray, CNN design, LIME (XAI), Bayesian inference, statistical modelling \
-**HPC & Pipelines:** OpenMP, parallelised workflows, batch processing, reproducible analysis pipelines, regression testing \
-**Domain Methods:** 2-point and 3-point correlation functions, kernel density estimation, RBF interpolation, forward modelling, model-data comparison \
-**Tools:** Linux, Git, GitHub, Cloudy, MaNGA IFU spectroscopy workflow
+**Programming:** Python, C++, LaTeX, Git, Linux  
+**Data analysis:** NumPy, SciPy, Pandas, Xarray, statistical modelling, uncertainty estimation, survey cross-matching  
+**Machine learning:** PyTorch, CNNs, LIME/XAI, cross-validation, model diagnostics, failure analysis  
+**Scientific computing:** OpenMP, parallel workflows, batch processing, performance profiling, reproducible pipelines  
+**Inference and modelling:** Bayesian inference, KDE, RBF interpolation, forward modelling, model-data comparison  
+**Astronomy tools:** Cloudy, MaNGA IFU workflow, Gaia DR3, PanSTARRS, DECaPS, HASH
 
 ## Awards
 
