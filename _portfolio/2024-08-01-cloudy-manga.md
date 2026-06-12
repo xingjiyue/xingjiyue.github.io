@@ -1,15 +1,46 @@
 ---
 title: "Photoionisation Model Inference with Cloudy and MaNGA"
-excerpt: "Built a Python pipeline to parallelise Cloudy model grids and compare them against MaNGA IFU spectroscopy using 3D line-ratio reprojections and Bayesian inference."
+excerpt: "Built a Python pipeline to parallelise Cloudy model grids and compare them against MaNGA IFU spectroscopy using 3D line-ratio spaces, interpolation, KDE, and Bayesian inference."
 collection: portfolio
 ---
 
-Optical emission-line ratios are the workhorse diagnostic of ionised gas in galaxies, and standard photoionisation models — computed with codes like Cloudy — are routinely used to interpret them. But can these models simultaneously reproduce the full set of emission lines observed in modern integral-field spectroscopy? This project confronts that question using data from the MaNGA survey.
+## Summary
 
-**Pipeline architecture.** I built an end-to-end Python pipeline that ingests MaNGA IFU data, extracts star-forming spaxels using BPT classification, and computes a comprehensive set of emission-line fluxes. On the modelling side, I parallelised Cloudy to generate large grids spanning metallicity, ionisation parameter, and elemental abundance variations — particularly sulphur, which has emerged as a persistent discrepancy in the literature. The pipeline automates batch submission, result collection, and quality filtering, making it practical to explore high-dimensional parameter spaces.
+Built a Cloudy plus MaNGA inference pipeline to test whether photoionisation models can reproduce multiple optical emission-line diagnostics simultaneously in star-forming galaxies.
 
-**Model-data comparison.** Rather than relying solely on traditional 2D BPT diagrams — where model overlap can mask real discrepancies — I adopted a 3D reprojection approach that reveals model-data tension more clearly. I used kernel density estimation to summarise the observed spaxel distribution and radial basis function interpolation to construct continuous model surfaces, enabling quantitative scoring of candidate models against the data. Bayesian inference at the individual spaxel level provides metallicity and ionisation-parameter estimates with formal uncertainties.
+| Item | Details |
+|---|---|
+| Role | Pipeline development, Cloudy grid generation, diagnostic-space design, Bayesian inference, visualisation, scientific interpretation |
+| Data | MaNGA IFU spectroscopy; star-forming spaxels selected with standard optical diagnostics |
+| Methods | BPT selection, 3D line-ratio reprojection, KDE, RBF interpolation, grid search, Bayesian parameter inference |
+| Implementation | Python, Cloudy, parallel batch processing, reproducible plotting pipeline |
+| Result | Identified a persistent [S III]-sensitive tension that is hidden in classical 2D diagnostic diagrams |
+| Output | Current MPhil research project; conference talk and paper draft |
 
-**Key findings.** Standard Cloudy models over-predict [S III] λ9530 Å line strengths by approximately a factor of three relative to the MaNGA data. A revised model configuration — with sulphur abundance approximately 0.3 dex lower and gas metallicity about 0.6 dex higher than the stellar value — reduces this discrepancy by roughly half while preserving good agreement in standard line-ratio diagnostics such as [N II]/Hα and [O III]/Hβ. This demonstrates that even widely used photoionisation models require careful empirical validation against modern IFU datasets.
+## Problem
 
-**Skills:** Python, Cloudy, Bayesian inference, MaNGA IFU spectroscopy, KDE, RBF interpolation, high-dimensional visualisation, model validation.
+Photoionisation models are widely used to infer physical conditions in ionised gas, but agreement in classical 2D BPT diagrams does not guarantee that all relevant emission lines are reproduced simultaneously. This project asks whether Cloudy model grids can match MaNGA star-forming spaxels across classical optical ratios and [S III]-sensitive diagnostics at the same time.
+
+## Pipeline
+
+I built an end-to-end Python pipeline that ingests MaNGA IFU measurements, selects star-forming spaxels, computes emission-line ratios, and compares the observed spaxel distribution against Cloudy model grids. On the modelling side, I parallelised Cloudy runs over metallicity, ionisation parameter, density, elemental abundances, and SED assumptions. The pipeline automates batch submission, result collection, quality filtering, interpolation, and figure generation.
+
+## Model-data comparison
+
+Instead of relying only on traditional 2D BPT projections, I used 3D diagnostic spaces to expose model-data tension that can be hidden by projection. Kernel density estimation summarises the observed spaxel distribution, while radial basis function interpolation constructs continuous model surfaces over discrete Cloudy grids. Bayesian inference is then used to estimate metallicity and ionisation parameter for individual spaxels and to compare candidate model configurations.
+
+## Key findings
+
+The main result is that classical diagnostics such as [N II]/Hα, [S II]/Hα, and [O III]/Hβ can be reproduced while [S III]-sensitive diagnostics still show a systematic discrepancy. In the current paper framing, the tension is treated as evidence that abundance-only changes are unlikely to be a complete solution; SED assumptions and model physics remain leading explanations that require further testing.
+
+## My contribution
+
+I developed the data-processing and modelling pipeline, generated and organised Cloudy grids, designed the 3D diagnostic-space comparison, implemented interpolation and Bayesian inference steps, produced the analysis figures, and prepared the conference and paper material.
+
+## Technical relevance
+
+This project demonstrates high-dimensional model validation, automated simulation management, Bayesian parameter inference, reproducible scientific visualisation, and careful interpretation of model-data residuals. These skills map directly to data-science workflows involving simulation, uncertainty, and model diagnostics.
+
+## Related talk
+
+[The [S III] Discrepancy in Star-Forming Galaxies: A Challenge for Photoionization Models](/talks/2026-05-guoshoujing) — Guo Shoujing Telescope (LAMOST) Workshop, 2026.
