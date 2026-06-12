@@ -31,4 +31,4 @@ Large-scale structure statistics · Three-point correlation functions · Bayesia
 - **Cloudy + MaNGA inference:** Parallelized photoionisation model grids and used Bayesian comparison to identify revised models that halve the sulphur-line discrepancy.
 - **Gaia-based CSPNe selection:** Cross-matched HASH with PanSTARRS and DECaPS DR2 to identify central-star candidates, with ongoing multimodal extension.
 
-[View CV (PDF)](/files/shiyu-yue-cv.pdf){: .btn .btn--primary} [Publications](/publications/){: .btn}
+[View CV (PDF)](/files/cv_1.pdf){: .btn .btn--primary} [Publications](/publications/){: .btn}
