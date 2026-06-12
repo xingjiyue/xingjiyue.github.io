@@ -8,11 +8,11 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "ShiyuYUE"
+site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+title                    : "Shiyu Yue"
 title_separator          : "-"
-name                     : &name "ShiyuYUE"
-description              : &description "MPhil Physics student at CUHK — cosmology, interpretable ML, and large-scale data analysis"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Shiyu Yue"
+description              : &description "MPhil Physics student at CUHK — computational astrophysics, Bayesian inference, interpretable ML, and scalable data analysis"
 url                      : https://xingjiyue.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,9 +24,9 @@ repository               : "xingjiyue/xingjiyue.github.io"
 author:
   # Biographic information
   avatar           : "photo.jpg"
-  name             : "ShiyuYUE"
+  name             : "Shiyu Yue"
   pronouns         : # example: "she/her"  
-  bio              : "MPhil in Physics at CUHK. Cosmological statistics, interpretable ML, and Bayesian data analysis."
+  bio              : "MPhil in Physics at CUHK. Computational astrophysics, Bayesian inference, interpretable ML, and scalable data analysis."
   location         : "Hong Kong SAR, China"
   employer         : "The Chinese University of Hong Kong"
   uri              : # URL
@@ -87,7 +87,7 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Journal Articles and Manuscripts'    
   conferences:
     title: 'Conference Papers'
 
@@ -128,7 +128,6 @@ atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
-
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -148,9 +147,10 @@ og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Shiyu Yue"
+  links:
+    - "https://github.com/xingjiyue"
 
 
 # Analytics
@@ -262,8 +262,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _publications
   - scope:
       path: ""
@@ -271,8 +271,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
@@ -280,8 +280,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comment: true
+      share: false
+      comments: false
   # _talks
   - scope:
       path: ""
@@ -289,7 +289,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
 
 
 # Sass/SCSS
