@@ -1,2 +1,6 @@
 body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #1f2933; }
-a { color: #8a1538; }
+a { color: #8a1538; text-decoration: none; }
+.site-header { border-bottom: 1px solid #e5e7eb; }
+.site-header__inner { max-width: 930px; margin: 0 auto; padding: 18px 20px; }
+.site-main { max-width: 930px; margin: 0 auto; padding: 48px 20px 72px; }
+.site-footer { max-width: 930px; margin: 0 auto; padding: 18px 20px; border-top: 1px solid #e5e7eb; color: #667085; }
