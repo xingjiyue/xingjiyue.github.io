@@ -8,11 +8,11 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Shiyu Yue"
 title_separator          : "-"
 name                     : &name "Shiyu Yue"
-description              : &description "MPhil Physics student at CUHK — computational astrophysics, Bayesian inference, interpretable ML, and scalable data analysis"
+description              : &description "Physics MPhil candidate at CUHK working on cosmological statistics, interpretable machine learning, and Bayesian model–data analysis"
 url                      : https://xingjiyue.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -25,12 +25,12 @@ author:
   # Biographic information
   avatar           : "photo.jpg"
   name             : "Shiyu Yue"
-  pronouns         : # example: "she/her"  
-  bio              : "MPhil in Physics at CUHK. Computational astrophysics, Bayesian inference, interpretable ML, and scalable data analysis."
-  location         : "Hong Kong SAR, China"
+  pronouns         :
+  bio              : "Physics MPhil candidate at CUHK. Cosmological statistics, interpretable machine learning, and Bayesian model–data analysis."
+  location         : "Hong Kong SAR"
   employer         : "The Chinese University of Hong Kong"
-  uri              : # URL
-  email            : "shiyu.yue@link.cuhk.edu.hk" 
+  uri              :
+  email            : "yshiyu@link.cuhk.edu.hk"
 
   # Academic websites
   academia         : # URL
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "shiyu-yue-314b3238b"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -87,7 +87,7 @@ publication_category:
   books:
     title: 'Books'
   manuscripts:
-    title: 'Journal Articles and Manuscripts'    
+    title: 'Journal Articles'
   conferences:
     title: 'Conference Papers'
 
@@ -128,6 +128,7 @@ atom_feed:
   hide                   : false     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -147,10 +148,9 @@ og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : Person
-  name                   : "Shiyu Yue"
-  links:
-    - "https://github.com/xingjiyue"
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
 
 
 # Analytics
@@ -262,8 +262,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: false
-      comments: false
+      share: true
+      comments: true
   # _publications
   - scope:
       path: ""
@@ -271,8 +271,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: false
-      comments: false
+      share: true
+      comments: true
   # _portfolio
   - scope:
       path: ""
@@ -280,8 +280,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: false
-      comments: false
+      share: true
+      comment: true
   # _talks
   - scope:
       path: ""
@@ -289,7 +289,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: false
+      share: true
 
 
 # Sass/SCSS

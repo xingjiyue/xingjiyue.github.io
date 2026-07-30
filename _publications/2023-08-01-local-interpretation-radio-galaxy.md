@@ -6,6 +6,8 @@ permalink: /publication/2023-local-interpretation-radio-galaxy
 excerpt: 'Conference proceeding introducing a LIME-based interpretation framework for radio-galaxy morphology classifiers, presented at IEEE URSI GASS 2023.'
 date: 2023-08-01
 venue: 'IEEE URSI GASS 2023'
+publication_status: published
+paperurl: 'https://www.ursi.org/proceedings/procGA23/papers/YSASummaryHongmingTang.pdf'
 citation: 'Tang, H., Yue, S. et al. (2023). "A model local interpretation routine for deep learning based radio galaxy classification." <i>IEEE URSI GASS 2023</i>.'
 ---
 

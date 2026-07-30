@@ -1,47 +1,21 @@
 ---
 title: "Interpretable Radio Galaxy Classification with FR-DEEP"
-excerpt: "Built a CNN classifier for radio-galaxy morphology and a LIME-based interpretability pipeline to audit model attention, label consistency, and failure modes."
+excerpt: "Developed CNN and LIME-based workflows for radio-galaxy morphology classification, then extended the project with a masked Set Transformer for variable-length source-component data."
 collection: portfolio
+permalink: /portfolio/2024-12-01-frdeep-xai/
+date: 2024-12-01
 ---
 
-## Summary
+**Sun Yat-sen University / Tsinghua University · Jul 2021 – Oct 2024**
 
-Built a CNN plus LIME interpretation workflow for radio-galaxy morphology classification, using explainable AI to test whether model decisions are physically meaningful rather than driven only by background artefacts or dataset bias.
+Deep learning can classify radio-galaxy morphology accurately, but accuracy alone does not show whether a model relies on physically meaningful structure. This project combined classification, interpretability, data-quality analysis, and a component-based Transformer extension to examine both model performance and model reasoning.
 
-| Item | Details |
-|---|---|
-| Role | Model design, training, interpretability workflow, visualisation, failure analysis, manuscript writing |
-| Data | FR-DEEP / FIRST radio-galaxy image cutouts |
-| Methods | CNN classification, five-fold cross-validation, LIME, Felzenszwalb superpixel segmentation, saliency-map diagnostics |
-| Implementation | Python, PyTorch, image segmentation, custom visualisation tools |
-| Result | About 91.4 percent mean test accuracy with systematic model-attention diagnostics |
-| Output | IEEE URSI GASS 2023 proceeding; ApJS manuscript under revision |
+**CNN and data-quality evaluation.** I curated and quality-tagged 650 radio images and trained a PyTorch CNN using source-level five-fold cross-validation. The classifier achieved 91.4% mean test accuracy. Reviewing labels, cutouts, and source quality made it possible to separate model limitations from defects in the underlying data.
 
-## Problem
+**LIME interpretation.** I built a Local Interpretable Model-agnostic Explanations workflow using Felzenszwalb superpixel segmentation and repeated perturbations. Custom overlays showed whether predictions were driven by jets, lobes, hotspots, background structure, or imaging artefacts. The audit translated individual explanations into concrete data-cleaning, relabelling, and retraining recommendations.
 
-Deep learning models can classify radio-galaxy morphology with high accuracy, but high accuracy alone does not prove that the model uses physically meaningful information. In radio astronomy, a classifier may learn survey artefacts, background noise, resolution effects, or label inconsistencies rather than the jets, lobes, and hotspots that define source morphology.
+**Masked Set Transformer extension.** I also represented each radio source as a variable-length set of detected components. A masked Set Transformer used multi-head self-attention and attention pooling to model interactions between those components without forcing every source into a fixed-length image representation. This extension is presented as implemented work; no unverified performance improvement over the CNN is claimed.
 
-## Method
+**Research outputs:** [A model local interpretation routine for deep learning based radio galaxy classification](https://www.ursi.org/proceedings/procGA23/papers/YSASummaryHongmingTang.pdf) (IEEE URSI GASS 2023, co-first author) and *Can I trust you?: Interpreting radio galaxy classifier with FR-DEEP dataset and eXplainable AI* (ApJS, under revision).
 
-I trained a convolutional neural network on FR-DEEP radio-galaxy cutouts and evaluated it with a five-fold cross-validation protocol. To interpret the classifier, I built a LIME-based local explanation pipeline. Each image is segmented into superpixels, perturbed to test local prediction sensitivity, and visualised as a saliency map over the original FIRST cutout.
-
-## Model auditing
-
-The interpretation pipeline made it possible to inspect whether the classifier attends to physically relevant radio structures. I used the saliency maps to diagnose cases where the model focused on background regions, isolated compact components, low-resolution structures, or morphology that conflicted with the assigned label. A manual re-inspection of 650 FIRST cutouts helped connect model behaviour to data quality and label reliability.
-
-## Results
-
-The classifier achieved about 91.4 percent mean test accuracy, but the more important result was the failure taxonomy: interpretability revealed where the model was reliable, where the input data were limiting, and where label or morphology ambiguity affected performance. This supported the argument that explainability should be part of the radio-galaxy classification pipeline, not a decorative post-processing step.
-
-## My contribution
-
-I contributed to CNN model development, LIME explanation design, visualisation, failure-mode inspection, interpretation of radio morphology, and manuscript preparation.
-
-## Technical relevance
-
-This project demonstrates practical machine-learning evaluation beyond accuracy: cross-validation, visual diagnostics, feature-attribution analysis, label-noise inspection, failure-mode taxonomy, and communication of model reliability to domain scientists.
-
-## Related publications
-
-- [Can I trust you?: Interpreting radio galaxy classifier with FR-DEEP dataset and eXplainable AI](/publication/2025-can-i-trust-you) — *The Astrophysical Journal Supplement Series*, under revision.
-- [A model local interpretation routine for deep learning based radio galaxy classification](/publication/2023-local-interpretation-radio-galaxy) — IEEE URSI GASS 2023, co-first author.
+**Skills:** Python, PyTorch, CNNs, LIME, Felzenszwalb segmentation, Set Transformers, model evaluation, data-quality analysis, failure analysis.

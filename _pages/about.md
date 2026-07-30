@@ -7,41 +7,26 @@ redirect_from:
   - /about.html
 ---
 
-I am an MPhil student in Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/), working at the intersection of computational astrophysics, Bayesian inference, interpretable machine learning, and scalable data analysis.
+I am an MPhil candidate in Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/), with expected completion in October 2026. My research spans cosmological statistics, interpretable machine learning, and Bayesian model–data analysis.
 
-My work focuses on building reliable statistical and computational tools for complex astronomical data: from fast correlation-function estimators for large-scale structure, to explainable radio-galaxy classifiers, to photoionisation-model inference with integral-field spectroscopy.
+I develop computational methods that connect physical questions with reliable evidence: deriving statistical approaches, implementing scalable research software, and validating results against simulations and observations.
 
-[Research](/research/){: .btn .btn--primary} [Projects](/portfolio/){: .btn} [Publications](/publications/){: .btn} [CV](/cv/){: .btn}
+## Recent news
 
-## Recent News
+- **Aug 2026** — Work on the [S III] discrepancy submitted to *Astronomy & Astrophysics*. [Project overview](/portfolio/2024-08-01-cloudy-manga/)
+- **Feb 2025** — *"Can I Trust You?"* under revision at *The Astrophysical Journal Supplement Series*.
+- **Dec 2024** — *"Pair Counting Without Binning"* published in *Monthly Notices of the Royal Astronomical Society*, 535(4).
+- **Aug 2024** — Began an MPhil in Physics at CUHK with a Postgraduate Studentship.
 
-- **Jun 2026** — Presented *"The [S III] Discrepancy in Star-Forming Galaxies: A Challenge for Photoionization Models"* at the Guo Shoujing Telescope (LAMOST) Workshop.
-- **Jun 2026** — Paper *"Pair Counting Without Binning"* published in *Monthly Notices of the Royal Astronomical Society*, 535(4), 3500–3516.
-- **Feb 2025** — *"Can I Trust You?"* submitted to *The Astrophysical Journal Supplement Series* and under revision.
-- **Aug 2024** — Started MPhil in Physics at CUHK under Postgraduate Studentship.
+## Research interests
 
-## Research Interests
+Large-scale structure statistics · Two- and three-point correlation functions · Bayesian inference · Interpretable deep learning · Radio-galaxy morphology · Integral-field spectroscopy · Photoionisation modelling · Cosmological simulations · Multi-source astronomical data
 
-Computational astrophysics · Large-scale structure statistics · Three-point correlation functions · Bayesian inference · Interpretable deep learning · Radio-galaxy morphology · Integral-field spectroscopy · MaNGA · Cloudy photoionisation modelling · Multimodal survey-data pipelines
+## Research highlights
 
-## Selected Work
+- **Fast 3PCF algorithm:** Developed an O(N log N) three-point correlation-function workflow in C++ and OpenMP, validated on simulations with more than 10<sup>8</sup> particles and measured at MDPL2 scale in under eight hours.
+- **Interpretable radio-galaxy ML:** Built a CNN and LIME-based audit workflow for 650 FR-DEEP images, achieving 91.4% mean test accuracy across source-level folds, and extended the work with a masked Set Transformer for variable-length source-component data.
+- **Cloudy and MaNGA inference:** Built a Python workflow for large photoionisation-model grids, 3D line-ratio diagnostics, and per-spaxel Bayesian inference; revised models approximately halved the [S III] discrepancy.
+- **CSPN candidate selection:** Integrated four heterogeneous survey sources, applied coordinate-based matching and Gaia validation, and explored a multimodal extension combining imaging and tabular features.
 
-### Fast cosmological statistics
-Developed an O(N log N) three-point correlation-function pipeline in C++/OpenMP, validated on MDPL2 simulations with more than 10^8 particles and compared against binning-corrected perturbation-theory predictions.
-
-[Read project](/portfolio/2024-10-01-3pcf-fast-algorithm/)
-
-### Interpretable deep learning
-Built a PyTorch + LIME workflow for radio-galaxy morphology classification, combining CNN performance with failure-mode analysis and visual model diagnostics.
-
-[Read project](/portfolio/2024-12-01-frdeep-xai/)
-
-### Bayesian photoionisation inference
-Built a Cloudy + MaNGA modelling pipeline for high-dimensional model-data comparison in optical emission-line diagnostics, focusing on the persistent [S III] tension in star-forming galaxies.
-
-[Read project](/portfolio/2024-08-01-cloudy-manga/)
-
-### Multimodal survey-data selection
-Cross-matched HASH planetary-nebula catalogues with PanSTARRS, DECaPS, and Gaia to identify central-star candidates and prepare a multimodal extension with imaging and astrometric data.
-
-[Read project](/portfolio/2025-03-01-cspn-multimodal/)
+[View CV (PDF)](/files/cv_1.pdf){: .btn .btn--primary} [Publications](/publications/){: .btn}
