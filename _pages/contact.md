@@ -5,12 +5,16 @@ permalink: /contact/
 author_profile: true
 ---
 
-**Email** — [shiyu.yue@link.cuhk.edu.hk](mailto:shiyu.yue@link.cuhk.edu.hk)
+**Email** — [yshiyu@link.cuhk.edu.hk](mailto:yshiyu@link.cuhk.edu.hk)
+
+**Phone** — [+852 4434 6668](tel:+85244346668)
 
 **GitHub** — [github.com/xingjiyue](https://github.com/xingjiyue)
 
-**Location** — Hong Kong SAR, China
+**LinkedIn** — [linkedin.com/in/shiyu-yue](https://www.linkedin.com/in/shiyu-yue-314b3238b)
+
+**Location** — Hong Kong SAR
 
 ---
 
-I am currently an MPhil student in the Department of Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/). I welcome inquiries about research collaboration, PhD opportunities, or data-science roles.
+I am an MPhil candidate in Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/), with expected completion in October 2026. I welcome enquiries about research collaboration, PhD opportunities, and research or data-intensive technical roles.

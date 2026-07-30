@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "ShiyuYUE"
+title                    : "Shiyu Yue"
 title_separator          : "-"
-name                     : &name "ShiyuYUE"
-description              : &description "MPhil Physics student at CUHK — cosmology, interpretable ML, and large-scale data analysis"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Shiyu Yue"
+description              : &description "Physics MPhil candidate at CUHK working on cosmological statistics, interpretable machine learning, and Bayesian model–data analysis"
 url                      : https://xingjiyue.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,13 +24,13 @@ repository               : "xingjiyue/xingjiyue.github.io"
 author:
   # Biographic information
   avatar           : "photo.jpg"
-  name             : "ShiyuYUE"
-  pronouns         : # example: "she/her"  
-  bio              : "MPhil in Physics at CUHK. Cosmological statistics, interpretable ML, and Bayesian data analysis."
-  location         : "Hong Kong SAR, China"
+  name             : "Shiyu Yue"
+  pronouns         :
+  bio              : "Physics MPhil candidate at CUHK. Cosmological statistics, interpretable machine learning, and Bayesian model–data analysis."
+  location         : "Hong Kong SAR"
   employer         : "The Chinese University of Hong Kong"
-  uri              : # URL
-  email            : "shiyu.yue@link.cuhk.edu.hk" 
+  uri              :
+  email            : "yshiyu@link.cuhk.edu.hk"
 
   # Academic websites
   academia         : # URL
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "shiyu-yue-314b3238b"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
