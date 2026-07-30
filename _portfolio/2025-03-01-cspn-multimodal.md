@@ -1,15 +1,19 @@
 ---
-title: "Multimodal Identification of Planetary Nebula Central Stars"
-excerpt: "Cross-matched the HASH catalogue with PanSTARRS and DECaPS DR2 to identify CSPN candidates, with ongoing multimodal extension using IPHAS, VPHAS+, and Gaia."
+title: "Multi-source Identification of Planetary Nebula Central Stars"
+excerpt: "Integrated four heterogeneous survey sources, applied coordinate-based matching and Gaia validation, and explored a multimodal extension for CSPN candidate selection."
 collection: portfolio
+permalink: /portfolio/2025-03-01-cspn-multimodal/
+date: 2025-03-01
 ---
 
-Central stars of planetary nebulae (CSPNe) are the hot, compact remnants that illuminate the surrounding nebula, yet they are notoriously difficult to identify: they are often faint, embedded in bright nebulosity, and easily confused with foreground or background field stars. This project develops a systematic, data-driven approach to CSPN candidate selection, moving beyond manual inspection toward automated, reproducible identification.
+**The University of Hong Kong Space Laboratory · Sep 2023 – Dec 2023**
 
-**Catalogue cross-matching.** The core workflow cross-matches the HASH (Hong Kong/AAO/Strasbourg Hα) planetary nebula catalogue against wide-field optical and near-infrared imaging surveys. I queried PanSTARRS DR2 and DECaPS DR2 for sources within the reported nebula positions, recording candidate magnitudes, colours, and astrometric offsets between catalogue centres and detected point sources. Each candidate was assessed against expected CSPN properties — compactness, colour, and positional coincidence with the nebula centre.
+Central stars of planetary nebulae are often faint, embedded in bright nebulosity, and difficult to distinguish from unrelated field stars. This project developed a reproducible candidate-selection workflow based on cross-source reconciliation and explicit quality control.
 
-**Validation with Gaia.** To distinguish genuine CSPNe from chance alignments, I cross-validated candidates against Gaia DR3 astrometry. Parallax and proper-motion measurements provide independent distance and kinematic constraints that help filter out unrelated field stars. Quantifying the distribution of positional offsets between catalogue coordinates and Gaia-verified central stars also revealed systematic biases in earlier HASH entries, which informs improved cross-matching strategies.
+**Catalogue integration.** I reconciled four heterogeneous imaging and catalogue sources, standardised their fields, and matched candidates using sky coordinates. Duplicate-control and traceability rules preserved the relationship between each candidate and its source records.
 
-**Ongoing: multimodal extension.** The current work extends the selection framework to a multimodal setting, combining IPHAS narrow-band Hα imaging, VPHAS+ optical photometry, and Gaia astrometric parameters. The goal is to train a classifier that jointly uses imaging morphology and tabular stellar parameters to rank CSPN candidates, improving both completeness and purity over single-survey methods.
+**Quality control and validation.** I compared positional offsets, object overlap, photometry, and foreground/background contamination. Gaia astrometry supplied an external consistency check for candidate distances and motions.
 
-**Skills:** Python, survey data cross-matching, astrometry, Gaia DR3, PanSTARRS, DECaPS, multimodal data fusion.
+**Multimodal extension.** During the project, I explored a multimodal design combining image features with tabular photometric and astrometric parameters for candidate screening. This was a research extension completed within the Sep–Dec 2023 project period, not an ongoing production system.
+
+**Skills:** catalogue cross-matching, coordinate reconciliation, schema standardisation, data-quality control, Gaia DR3, multimodal model design.

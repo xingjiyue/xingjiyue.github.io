@@ -1,7 +1,9 @@
 ---
 title: "Photoionisation Model Inference with Cloudy and MaNGA"
-excerpt: "Built a Python pipeline to parallelise Cloudy model grids and compare them against MaNGA IFU spectroscopy using 3D line-ratio reprojections and Bayesian inference."
+excerpt: "Built a Python and Cloudy workflow for MaNGA spectroscopy, 3D line-ratio diagnostics, and Bayesian model–data comparison; work on the [S III] discrepancy was submitted to A&A in August 2026."
 collection: portfolio
+permalink: /portfolio/2024-08-01-cloudy-manga/
+date: 2024-08-01
 ---
 
 Optical emission-line ratios are the workhorse diagnostic of ionised gas in galaxies, and standard photoionisation models — computed with codes like Cloudy — are routinely used to interpret them. But can these models simultaneously reproduce the full set of emission lines observed in modern integral-field spectroscopy? This project confronts that question using data from the MaNGA survey.
@@ -11,5 +13,7 @@ Optical emission-line ratios are the workhorse diagnostic of ionised gas in gala
 **Model-data comparison.** Rather than relying solely on traditional 2D BPT diagrams — where model overlap can mask real discrepancies — I adopted a 3D reprojection approach that reveals model-data tension more clearly. I used kernel density estimation to summarise the observed spaxel distribution and radial basis function interpolation to construct continuous model surfaces, enabling quantitative scoring of candidate models against the data. Bayesian inference at the individual spaxel level provides metallicity and ionisation-parameter estimates with formal uncertainties.
 
 **Key findings.** Standard Cloudy models over-predict [S III] λ9530 Å line strengths by approximately a factor of three relative to the MaNGA data. A revised model configuration — with sulphur abundance approximately 0.3 dex lower and gas metallicity about 0.6 dex higher than the stellar value — reduces this discrepancy by roughly half while preserving good agreement in standard line-ratio diagnostics such as [N II]/Hα and [O III]/Hβ. This demonstrates that even widely used photoionisation models require careful empirical validation against modern IFU datasets.
+
+**Research output.** Work on the [S III] discrepancy was submitted to *Astronomy & Astrophysics* in August 2026. The manuscript status is reported as submitted, not accepted or published.
 
 **Skills:** Python, Cloudy, Bayesian inference, MaNGA IFU spectroscopy, KDE, RBF interpolation, high-dimensional visualisation, model validation.

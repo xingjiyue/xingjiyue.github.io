@@ -2,6 +2,8 @@
 title: "Fast O(N log N) 3PCF Algorithm for Cosmology"
 excerpt: "Developed a novel multiscale approach to the three-point correlation function, treating binned pair-counting as in-situ convolution. Implemented in C++ with OpenMP and validated on MDPL2 simulations."
 collection: portfolio
+permalink: /portfolio/2024-10-01-3pcf-fast-algorithm/
+date: 2024-10-01
 ---
 
 The three-point correlation function (3PCF) is a key probe of large-scale structure that captures non-Gaussian information beyond the two-point function, but conventional estimators become computationally prohibitive at the scales and precision demanded by modern surveys. This project developed a new theoretical framework for 3PCF estimation that reformulates the problem from a brute-force counting exercise into a scalable signal-processing pipeline.
@@ -12,6 +14,6 @@ The three-point correlation function (3PCF) is a key probe of large-scale struct
 
 **Testing and robustness.** I applied the method to Quijote halo catalogues to study how sparse-tracer sampling, shot noise, and filter-scale choices affect the recovered signal. This work directly informed the design of the estimator's window-function treatment and filtering strategies, ensuring that theoretical predictions and measurements share consistent binning conventions.
 
-**Related publication:** [Pair counting without binning – a new approach to correlation functions in clustering statistics](/publication/2024-pair-counting-without-binning) (MNRAS, 2024, first author).
+**Related publication:** [Pair counting without binning – a new approach to correlation functions in clustering statistics](https://doi.org/10.1093/mnras/stae2513) (*MNRAS*, 2024, first author).
 
 **Skills:** C++, OpenMP, algorithm design, large-scale structure statistics, simulation validation, performance profiling.
