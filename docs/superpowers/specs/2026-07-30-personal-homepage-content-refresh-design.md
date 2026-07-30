@@ -47,6 +47,12 @@ Publication states must remain exact:
 - `under revision` for the ApJS manuscript
 - `in preparation` only when explicitly supported and needed
 
+Published papers will include a canonical external link. Prefer a DOI or the
+publisher's article page; if no suitable publisher landing page is available,
+use the official proceedings page or a stable arXiv record. Submitted or
+under-revision manuscripts will receive an external paper link only when a
+public preprint already exists.
+
 Conflicting metrics will be omitted or expressed conservatively unless the user
 has confirmed the exact value. The site must not add SQL, Docker, SLURM, Power
 BI, Tableau, cloud-platform, production-deployment, or commercial-impact claims
@@ -119,8 +125,40 @@ The public CV page will use this order:
 The Publications page will include the three existing outputs and a new A&A
 submitted manuscript entry connected to the Cloudy/MaNGA project.
 
+The two published outputs will expose stable paper links through their
+publication front matter:
+
+- MNRAS: `https://doi.org/10.1093/mnras/stae2513`
+- IEEE URSI GASS 2023: the official URSI proceedings paper or the stable arXiv
+  record `https://arxiv.org/abs/2307.03453`
+
 The Contact page will show the confirmed email, phone, GitHub, LinkedIn,
 location, and a short collaboration statement.
+
+## Layout and Writing Conventions
+
+The implementation will follow the conventions already established by Academic
+Pages and common academic personal websites:
+
+- use the existing Jekyll collections, YAML front matter, archive cards, and
+  responsive layouts
+- keep the current theme, typography, navigation, sidebar, and content width
+- do not introduce a one-off component or custom CSS when the theme already
+  provides the needed pattern
+- use short descriptive excerpts on index pages and fuller evidence on detail
+  pages
+- use first person for the homepage and project narratives, and standard
+  bibliographic wording for publication entries
+- use sentence case for prose headings and consistent British English spelling
+  where the current site already uses forms such as `visualisation` and
+  `modelling`
+- keep paragraphs compact, lead with the research question or contribution,
+  and avoid CV-style keyword lists in narrative sections
+- attach external links through standard `paperurl`, DOI, or Markdown link
+  fields rather than embedding raw URLs in prose
+
+New content should look native to the existing site rather than like a separate
+landing page or job-application microsite.
 
 ## Page Content Design
 
@@ -335,6 +373,10 @@ Expected public-content files:
 - one new `_publications/*.md` file for the A&A submission
 - `_data/cv.json`, limited to removal of misleading template data
 
+Existing archive layouts and includes may be inspected to confirm link
+rendering, but they will not be modified unless a published-paper link cannot be
+expressed with the theme's existing front-matter conventions.
+
 The implementation plan must inspect existing talk entries before deciding
 whether any talk metadata needs wording-only consistency changes.
 
@@ -355,6 +397,8 @@ The completed refresh must pass:
 6. Final claim review against this specification and the evidence guardrails
 7. Privacy review confirming that the approved phone appears only on Contact
    and CV and that no residential address is published
+8. External-link review confirming that each published paper opens its canonical
+   DOI, publisher, official-proceedings, or arXiv destination
 
 ## Out of Scope
 
@@ -365,4 +409,3 @@ The completed refresh must pass:
 - Adding unsupported tools for keyword coverage
 - Publishing or deploying the website
 - Replacing the downloadable PDF until a canonical PDF version is selected
-
