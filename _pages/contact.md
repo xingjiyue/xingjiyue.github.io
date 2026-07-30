@@ -13,4 +13,4 @@ author_profile: true
 
 ---
 
-I am currently an MPhil student in the Department of Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/). I welcome inquiries about research collaboration, PhD opportunities, or data-science roles.
+I am currently an MPhil student in the Department of Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/). I welcome inquiries about PhD opportunities, research collaboration, computational astrophysics, interpretable machine learning, Bayesian inference, and data-analysis roles.

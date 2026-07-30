@@ -1,15 +1,46 @@
 ---
 title: "Multimodal Identification of Planetary Nebula Central Stars"
-excerpt: "Cross-matched the HASH catalogue with PanSTARRS and DECaPS DR2 to identify CSPN candidates, with ongoing multimodal extension using IPHAS, VPHAS+, and Gaia."
+excerpt: "Cross-matched HASH with PanSTARRS, DECaPS DR2, and Gaia DR3 to identify CSPN candidates, with ongoing multimodal extension using IPHAS, VPHAS+, and Gaia."
 collection: portfolio
 ---
 
-Central stars of planetary nebulae (CSPNe) are the hot, compact remnants that illuminate the surrounding nebula, yet they are notoriously difficult to identify: they are often faint, embedded in bright nebulosity, and easily confused with foreground or background field stars. This project develops a systematic, data-driven approach to CSPN candidate selection, moving beyond manual inspection toward automated, reproducible identification.
+## Summary
 
-**Catalogue cross-matching.** The core workflow cross-matches the HASH (Hong Kong/AAO/Strasbourg Hα) planetary nebula catalogue against wide-field optical and near-infrared imaging surveys. I queried PanSTARRS DR2 and DECaPS DR2 for sources within the reported nebula positions, recording candidate magnitudes, colours, and astrometric offsets between catalogue centres and detected point sources. Each candidate was assessed against expected CSPN properties — compactness, colour, and positional coincidence with the nebula centre.
+Developed a reproducible candidate-selection workflow for identifying central stars of planetary nebulae, combining catalogue cross-matching, imaging-survey photometry, and Gaia astrometry.
 
-**Validation with Gaia.** To distinguish genuine CSPNe from chance alignments, I cross-validated candidates against Gaia DR3 astrometry. Parallax and proper-motion measurements provide independent distance and kinematic constraints that help filter out unrelated field stars. Quantifying the distribution of positional offsets between catalogue coordinates and Gaia-verified central stars also revealed systematic biases in earlier HASH entries, which informs improved cross-matching strategies.
+| Item | Details |
+|---|---|
+| Role | Catalogue querying, cross-matching, candidate filtering, validation, visual inspection, multimodal extension |
+| Data | HASH planetary-nebula catalogue; PanSTARRS; DECaPS DR2; Gaia DR3; ongoing IPHAS and VPHAS+ extension |
+| Methods | Positional cross-matching, photometric filtering, astrometric validation, offset analysis, multimodal candidate ranking |
+| Implementation | Python, survey-data queries, table processing, visual inspection and validation scripts |
+| Result | Built a systematic workflow for ranking CSPN candidates and quantifying central-star offset behaviour |
+| Output | HKU Laboratory for Space Research presentation; Best Speaker Award |
 
-**Ongoing: multimodal extension.** The current work extends the selection framework to a multimodal setting, combining IPHAS narrow-band Hα imaging, VPHAS+ optical photometry, and Gaia astrometric parameters. The goal is to train a classifier that jointly uses imaging morphology and tabular stellar parameters to rank CSPN candidates, improving both completeness and purity over single-survey methods.
+## Problem
 
-**Skills:** Python, survey data cross-matching, astrometry, Gaia DR3, PanSTARRS, DECaPS, multimodal data fusion.
+Central stars of planetary nebulae are often faint, compact, and embedded in bright nebulosity. Catalogue positions can also be uncertain, making manual identification slow and difficult to reproduce. This project develops a data-driven approach to candidate selection.
+
+## Catalogue cross-matching
+
+The core workflow cross-matches the HASH planetary-nebula catalogue against wide-field imaging surveys. I queried PanSTARRS and DECaPS DR2 for sources near reported nebula positions, recording candidate magnitudes, colours, and angular offsets between catalogue centres and detected point sources. Candidates were then assessed using compactness, colour, and positional coincidence.
+
+## Gaia validation
+
+I cross-validated candidate sources with Gaia DR3 astrometry. Parallax and proper-motion information help reject unrelated field stars and identify candidates with plausible central-star properties. The offset distribution between catalogue centres and Gaia-supported candidates also provides information about systematic positional uncertainties in earlier catalogue entries.
+
+## Ongoing multimodal extension
+
+The current extension combines IPHAS narrow-band H-alpha imaging, VPHAS+ optical photometry, and Gaia astrometric parameters. The goal is to train a classifier or ranking model that jointly uses imaging morphology and tabular stellar parameters, improving candidate completeness and purity relative to single-survey selection.
+
+## My contribution
+
+I built the cross-matching workflow, processed survey catalogues, designed candidate filters, inspected candidate images, validated sources with Gaia DR3, and prepared the presentation material.
+
+## Technical relevance
+
+This project demonstrates catalogue-scale data integration, multimodal feature construction, astrometric validation, candidate ranking, and reproducible survey-data processing.
+
+## Related talk
+
+[Hunting Central Stars of Round Galactic Planetary Nebulae](/talks/2023-12-lsr-jamboree) — Annual Research Jamboree, Laboratory for Space Research, HKU.

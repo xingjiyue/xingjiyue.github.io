@@ -1,17 +1,46 @@
 ---
 title: "Fast O(N log N) 3PCF Algorithm for Cosmology"
-excerpt: "Developed a novel multiscale approach to the three-point correlation function, treating binned pair-counting as in-situ convolution. Implemented in C++ with OpenMP and validated on MDPL2 simulations."
+excerpt: "Developed a scalable three-point correlation-function framework by treating binned pair-counting as in-situ convolution. Implemented in C++/OpenMP and validated on MDPL2 and Quijote simulations."
 collection: portfolio
 ---
 
-The three-point correlation function (3PCF) is a key probe of large-scale structure that captures non-Gaussian information beyond the two-point function, but conventional estimators become computationally prohibitive at the scales and precision demanded by modern surveys. This project developed a new theoretical framework for 3PCF estimation that reformulates the problem from a brute-force counting exercise into a scalable signal-processing pipeline.
+## Summary
 
-**Approach.** Rather than looping over galaxy triplets — an O(N³) operation — I reframed binned pair-counting as an in-situ convolution on the density field. This insight transforms the 3PCF into a sequence of filtering operations, each amenable to fast Fourier methods. The resulting algorithm achieves O(N log N) scaling, making it feasible to process datasets with hundreds of millions of particles.
+Developed a scalable O(N log N) estimator for the three-point correlation function (3PCF), turning pair counting into an in-situ convolution problem and enabling measurements on large cosmological simulations.
 
-**Implementation.** I built the full measurement pipeline in C++ with OpenMP shared-memory parallelism, targeting multi-core CPU architectures. The pipeline ingests particle catalogues, constructs density fields on adaptive meshes, performs the convolution-based estimator, and outputs multipole-expanded 3PCF measurements in Legendre polynomial bases. I validated the implementation against analytical predictions from binning-corrected tree-level perturbation theory, confirming agreement to within approximately five percent in the quasilinear regime. On the MDPL2 dark-matter simulation — containing more than 10⁸ particles — the pipeline completes a full 3PCF measurement in under eight hours on a single compute node.
+| Item | Details |
+|---|---|
+| Role | First-author research project; algorithm design, implementation, validation, and writing |
+| Data | MDPL2 dark-matter simulation; Quijote halo catalogues |
+| Methods | Binning-aware correlation statistics, multiscale filtering, in-situ convolution, Legendre multipole expansion |
+| Implementation | C++, OpenMP, Python validation and plotting scripts |
+| Result | Full 3PCF measurement on more than 100 million particles in under 8 hours; about 5 percent agreement with binning-corrected theory in the quasilinear regime |
+| Output | First-author MNRAS paper |
 
-**Testing and robustness.** I applied the method to Quijote halo catalogues to study how sparse-tracer sampling, shot noise, and filter-scale choices affect the recovered signal. This work directly informed the design of the estimator's window-function treatment and filtering strategies, ensuring that theoretical predictions and measurements share consistent binning conventions.
+## Problem
 
-**Related publication:** [Pair counting without binning – a new approach to correlation functions in clustering statistics](/publication/2024-pair-counting-without-binning) (MNRAS, 2024, first author).
+The three-point correlation function is a key statistic for non-Gaussian information in large-scale structure, but conventional triplet-counting estimators are computationally expensive and difficult to apply directly to modern simulations and survey-scale datasets. This project asks whether the counting problem can be reformulated so that the measurement and the theoretical prediction handle binning consistently.
 
-**Skills:** C++, OpenMP, algorithm design, large-scale structure statistics, simulation validation, performance profiling.
+## Method
+
+Rather than looping over every triplet, I reframed binned pair-counting as an in-situ convolution on the density field. The resulting estimator transforms the 3PCF measurement into a sequence of filtering and convolution operations. The framework was connected to binning-corrected tree-level perturbation theory so that measurements and predictions use the same window-function treatment.
+
+## Implementation and validation
+
+I built the measurement pipeline in C++ with OpenMP shared-memory parallelism. The code ingests particle catalogues, constructs density-field representations, applies multiscale filters, computes multipole-expanded statistics, and exports results for Python-based validation and visualisation. I tested the pipeline on MDPL2-scale dark-matter simulations and Quijote halo catalogues, focusing on numerical accuracy, sparse-tracer behaviour, shot noise, and filter-radius choices.
+
+## Results
+
+The pipeline completes a full 3PCF measurement on more than 100 million particles within a practical runtime. In the quasilinear regime, the measured signal agrees with binning-corrected perturbation-theory predictions at the few-percent level, demonstrating that the algorithm is both computationally scalable and physically interpretable.
+
+## My contribution
+
+I developed the core theoretical reformulation, implemented the C++/OpenMP pipeline, designed the validation tests, produced the analysis figures, and wrote the first-author paper.
+
+## Technical relevance
+
+This project demonstrates scalable algorithm design, high-performance C++ implementation, numerical validation, performance profiling, and large-scale simulation data processing. The same skills transfer naturally to large data pipelines, statistical computing, and simulation-based inference.
+
+## Related publication
+
+[Pair counting without binning – a new approach to correlation functions in clustering statistics](/publication/2024-pair-counting-without-binning) — *Monthly Notices of the Royal Astronomical Society*, 535(4), 3500–3516, first author.
