@@ -6,6 +6,8 @@ permalink: /publication/2024-pair-counting-without-binning
 excerpt: 'A novel O(N log N) approach to the three-point correlation function that treats binned pair-counting as in-situ convolution, validated on large-scale dark-matter simulations.'
 date: 2024-12-01
 venue: 'Monthly Notices of the Royal Astronomical Society, 535(4), 3500–3516'
+publication_status: published
+paperurl: 'https://doi.org/10.1093/mnras/stae2513'
 citation: 'Yue, S., Feng, L. et al. (2024). "Pair counting without binning – a new approach to correlation functions in clustering statistics." <i>MNRAS</i>, 535(4), 3500–3516.'
 ---
 This paper presents a new theoretical framework for computing the three-point correlation function (3PCF) that replaces conventional binning with an in-situ convolution approach. The method achieves O(N log N) scaling and was validated on the MDPL2 dark-matter simulation with more than 10⁸ particles.
