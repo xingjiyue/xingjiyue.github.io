@@ -294,6 +294,15 @@ $academic-link: #315f8c;
   margin: 5px 0 7px;
 }
 
+.talk-detail__meta {
+  margin: -24px 0 34px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid $academic-rule;
+  color: $academic-muted;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
 .project-summary__caption {
   padding-top: 8px;
   font-size: 0.78rem;

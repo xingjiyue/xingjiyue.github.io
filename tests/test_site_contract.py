@@ -238,5 +238,32 @@ class PublicationContractTests(unittest.TestCase):
         self.assertEqual(landing.count("include academic/paper-row.html"), 4)
 
 
+class TalkContractTests(unittest.TestCase):
+    def test_talks_page_has_five_oral_items_and_one_related_output(self):
+        landing = read("_pages/talks.html")
+        self.assertIn("Oral and invited talks", landing)
+        self.assertIn("Related conference output", landing)
+        self.assertEqual(landing.count("include academic/talk-entry.html"), 6)
+
+    def test_talk_sources_remove_unsupported_types_and_locations(self):
+        source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "_talks").glob("*.md"))
+        for forbidden in ("Conference presentation", "Virtual / International", "Poster", "Presented results"):
+            self.assertNotIn(forbidden, source)
+
+    def test_verified_talk_titles_and_types_are_present(self):
+        expected = {
+            "2026-01-09-ccbc.md": ("How to Fit All Emission Lines Simultaneously with Photoionisation Models", "Talk"),
+            "2026-05-23-guoshoujing.md": ("The [S III] Discrepancy in Star-Forming Galaxies: A Challenge for Photoionization Models", "Talk"),
+            "2023-12-01-lsr-jamboree.md": ("Hunting Central Stars of Round Galactic Planetary Nebulae", "Talk"),
+            "2023-11-15-intelligent-computing-astronomy.md": ("Pair counting without binning – a new approach to correlation functions in clustering statistics", "Talk"),
+            "2023-11-01-ml-astronomy-workshop.md": ("A model local interpretation routine for deep learning based radio galaxy classification", "Invited Talk"),
+            "2023-08-01-ieee-ursi-gass.md": ("A model local interpretation routine for deep learning based radio galaxy classification", "Co-authored conference proceeding"),
+        }
+        for filename, (title, item_type) in expected.items():
+            source = read(f"_talks/{filename}")
+            self.assertIn(f'title: "{title}"', source, filename)
+            self.assertIn(f'display_type: "{item_type}"', source, filename)
+
+
 if __name__ == "__main__":
     unittest.main()

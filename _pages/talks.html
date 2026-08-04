@@ -1,16 +1,29 @@
 ---
-layout: archive
+layout: academic
 title: "Talks and presentations"
 permalink: /talks/
-author_profile: true
+author_profile: false
+intro: "Verified oral presentations are separated from related conference output."
 ---
 
-{% if site.talkmap_link == true %}
+<div class="section-heading"><h2>Oral and invited talks</h2></div>
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+{% assign guoshoujing = site.talks | where: "permalink", "/talks/2026-05-guoshoujing" | first %}
+{% include academic/talk-entry.html item=guoshoujing %}
 
-{% endif %}
+{% assign ccbc = site.talks | where: "permalink", "/talks/2026-01-ccbc" | first %}
+{% include academic/talk-entry.html item=ccbc %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+{% assign cspn = site.talks | where: "permalink", "/talks/2023-12-lsr-jamboree" | first %}
+{% include academic/talk-entry.html item=cspn %}
+
+{% assign pair_counting = site.talks | where: "permalink", "/talks/2023-11-intelligent-computing" | first %}
+{% include academic/talk-entry.html item=pair_counting %}
+
+{% assign ml_astronomy = site.talks | where: "permalink", "/talks/2023-11-ml-astronomy" | first %}
+{% include academic/talk-entry.html item=ml_astronomy %}
+
+<div class="section-heading"><h2>Related conference output</h2></div>
+
+{% assign ursi = site.talks | where: "permalink", "/talks/2023-ieee-ursi-gass" | first %}
+{% include academic/talk-entry.html item=ursi %}

@@ -1,11 +1,11 @@
 ---
 title: "The [S III] Discrepancy in Star-Forming Galaxies: A Challenge for Photoionization Models"
 collection: talks
-type: "Talk"
 permalink: /talks/2026-05-guoshoujing
-venue: "Guo Shoujing Telescope (LAMOST) Workshop"
+venue: "Guo Shoujing Telescope Workshop"
 date: 2026-05-23
-location: "China"
+display_type: "Talk"
+display_date: "May 2026"
 ---
 
 Presented my current MPhil work on the [S III] discrepancy in star-forming galaxies, using MaNGA integral-field spectroscopy and Cloudy photoionisation models.
