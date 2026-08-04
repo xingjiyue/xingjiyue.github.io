@@ -3,11 +3,17 @@ title: "A model local interpretation routine for deep learning based radio galax
 collection: publications
 category: conferences
 permalink: /publication/2023-local-interpretation-radio-galaxy
-excerpt: 'Conference proceeding introducing a LIME-based interpretation framework for radio-galaxy morphology classifiers, presented at IEEE URSI GASS 2023.'
+excerpt: 'Co-authored conference proceeding introducing a LIME-based interpretation framework for radio-galaxy morphology classifiers at IEEE URSI GASS 2023.'
 date: 2023-08-01
 venue: 'IEEE URSI GASS 2023'
 publication_status: published
+display_status: 'IEEE URSI GASS 2023 · published conference proceeding'
+contribution: 'Co-authored proceeding on a LIME-based local interpretation routine for radio-galaxy classifiers.'
+project_url: '/portfolio/2024-12-01-frdeep-xai/'
+thumbnail: '/images/projects/frdeep-method.png'
+thumbnail_alt: 'Radio galaxy image shown with alternative superpixel segmentation methods'
 paperurl: 'https://www.ursi.org/proceedings/procGA23/papers/YSASummaryHongmingTang.pdf'
+arxivurl: 'https://arxiv.org/abs/2307.03453'
 citation: 'Tang, H., Yue, S. et al. (2023). "A model local interpretation routine for deep learning based radio galaxy classification." <i>IEEE URSI GASS 2023</i>.'
 ---
 

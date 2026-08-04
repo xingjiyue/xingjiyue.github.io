@@ -1,32 +1,19 @@
 ---
-layout: archive
+layout: academic
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
+intro: "Journal articles and conference proceedings, with publication state and canonical public links shown explicitly."
 ---
 
-{% include base_path %}
+{% assign siii = site.publications | where: "permalink", "/publication/2026-siii-discrepancy-aa" | first %}
+{% include academic/paper-row.html item=siii primary_url=siii.url %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+{% assign frdeep = site.publications | where: "permalink", "/publication/2025-can-i-trust-you" | first %}
+{% include academic/paper-row.html item=frdeep primary_url=frdeep.url %}
 
+{% assign pair_counting = site.publications | where: "permalink", "/publication/2024-pair-counting-without-binning" | first %}
+{% include academic/paper-row.html item=pair_counting primary_url=pair_counting.url %}
 
-
+{% assign ursi = site.publications | where: "permalink", "/publication/2023-local-interpretation-radio-galaxy" | first %}
+{% include academic/paper-row.html item=ursi primary_url=ursi.url %}

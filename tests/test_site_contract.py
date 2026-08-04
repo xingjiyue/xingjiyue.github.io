@@ -193,5 +193,50 @@ class ProjectDetailContractTests(unittest.TestCase):
         self.assertNotIn("ongoing IPHAS", source)
 
 
+class PublicationContractTests(unittest.TestCase):
+    REQUIRED_KEYS = (
+        "title",
+        "citation",
+        "publication_status",
+        "display_status",
+        "contribution",
+        "project_url",
+        "thumbnail",
+        "thumbnail_alt",
+    )
+
+    def test_publications_have_scan_first_metadata(self):
+        publications = sorted((ROOT / "_publications").glob("*.md"))
+        self.assertEqual(len(publications), 4)
+        for path in publications:
+            front_matter = path.read_text(encoding="utf-8").split("---", 2)[1]
+            for key in self.REQUIRED_KEYS:
+                self.assertRegex(front_matter, rf"(?m)^{key}:", (path.name, key))
+
+    def test_only_verified_public_outputs_have_paper_urls(self):
+        with_urls = {
+            path.name
+            for path in (ROOT / "_publications").glob("*.md")
+            if re.search(r"(?m)^paperurl:", path.read_text(encoding="utf-8").split("---", 2)[1])
+        }
+        self.assertEqual(
+            with_urls,
+            {
+                "2023-08-01-local-interpretation-radio-galaxy.md",
+                "2024-12-01-pair-counting-without-binning.md",
+            },
+        )
+
+    def test_publication_copy_has_no_placeholders_or_stale_claims(self):
+        source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "_publications").glob("*.md"))
+        self.assertNotIn("to be added", source)
+        self.assertNotIn("approximately halved", source)
+        self.assertNotIn("Presented results", source)
+
+    def test_publications_page_renders_all_four_rows(self):
+        landing = read("_pages/publications.html")
+        self.assertEqual(landing.count("include academic/paper-row.html"), 4)
+
+
 if __name__ == "__main__":
     unittest.main()

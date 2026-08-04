@@ -7,6 +7,11 @@ excerpt: 'A first-author MNRAS paper presenting an O(N log N) approach to the th
 date: 2024-12-01
 venue: 'Monthly Notices of the Royal Astronomical Society, 535(4), 3500–3516'
 publication_status: published
+display_status: 'MNRAS 535(4), 3500–3516 · 2024 · published'
+contribution: 'Developed the binning-aware O(N log N) estimator, implemented the C++/OpenMP pipeline, and validated it against theory and large simulations.'
+project_url: '/portfolio/2024-10-01-3pcf-fast-algorithm/'
+thumbnail: '/images/projects/3pcf-validation.png'
+thumbnail_alt: 'Measured three-point correlation curves compared with binning-corrected perturbation-theory predictions'
 paperurl: 'https://doi.org/10.1093/mnras/stae2513'
 citation: 'Yue, S., Feng, L. et al. (2024). "Pair counting without binning – a new approach to correlation functions in clustering statistics." <i>MNRAS</i>, 535(4), 3500–3516.'
 ---
@@ -24,4 +29,4 @@ This first-author paper presents a theoretical and computational framework for c
 ## Links
 
 - [Related project](/portfolio/2024-10-01-3pcf-fast-algorithm/)
-- DOI / arXiv / code: to be added when the canonical public links are finalised
+- [Published article](https://doi.org/10.1093/mnras/stae2513)
