@@ -22,5 +22,8 @@ package-lock.json
 # Ignore project-local Git worktrees
 .worktrees/
 
+# Ignore local visualization companions
+.superpowers/
+
 # Ignore files created by MacOS
 .DS_Store

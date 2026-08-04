@@ -13,13 +13,13 @@
 
     "themes",
     "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
     "include/mixins",
     "vendor/susy/susy",
 
     "layout/reset",
     "layout/base",
+    "layout/academic",
 
     "include/utilities",
     "layout/tables",
