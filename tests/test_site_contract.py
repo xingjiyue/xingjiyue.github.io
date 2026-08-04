@@ -11,6 +11,10 @@ def read(path: str) -> str:
 
 
 class SiteShellContractTests(unittest.TestCase):
+    def test_internal_project_docs_are_excluded_from_pages_build(self):
+        config = read("_config.yml")
+        self.assertRegex(config, r"(?m)^  - docs$")
+
     def test_primary_navigation_is_compact_and_not_duplicated(self):
         navigation = read("_data/navigation.yml")
         self.assertNotIn('title: "About"', navigation)
