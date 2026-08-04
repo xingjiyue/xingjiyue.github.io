@@ -265,5 +265,47 @@ class TalkContractTests(unittest.TestCase):
             self.assertIn(f'display_type: "{item_type}"', source, filename)
 
 
+class IdentityAndPrivacyContractTests(unittest.TestCase):
+    PUBLIC_DIRS = ("_pages", "_portfolio", "_publications", "_talks", "_includes")
+
+    def public_sources(self):
+        for directory in self.PUBLIC_DIRS:
+            yield from (ROOT / directory).rglob("*")
+
+    def test_professional_email_is_used_and_phone_is_limited_to_cv_and_contact(self):
+        text_files = [path for path in self.public_sources() if path.is_file()]
+        combined = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in text_files)
+        self.assertIn("yshiyu@link.cuhk.edu.hk", combined)
+        phone_paths = {
+            path.relative_to(ROOT).as_posix()
+            for path in text_files
+            if "+852 4434 6668" in path.read_text(encoding="utf-8", errors="ignore")
+        }
+        self.assertEqual(phone_paths, {"_pages/contact.md", "_pages/cv.md"})
+
+    def test_no_residential_address_is_published(self):
+        combined = "\n".join(
+            path.read_text(encoding="utf-8", errors="ignore")
+            for path in self.public_sources()
+            if path.is_file()
+        ).lower()
+        self.assertNotIn("residential address", combined)
+        self.assertNotIn("home address", combined)
+
+    def test_cv_and_contact_use_academic_layout(self):
+        for filename in ("cv.md", "contact.md"):
+            self.assertIn("layout: academic", read(f"_pages/{filename}"))
+
+    def test_cv_uses_conservative_cloudy_result(self):
+        cv = read("_pages/cv.md")
+        self.assertNotIn("approximately halved", cv)
+        self.assertIn("abundance shifts do not reconcile", cv)
+
+    def test_research_route_redirects_to_projects(self):
+        research = read("_pages/research.md")
+        self.assertIn("redirect_to: /portfolio/", research)
+        self.assertNotIn("## Research directions", research)
+
+
 if __name__ == "__main__":
     unittest.main()

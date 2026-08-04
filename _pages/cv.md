@@ -1,29 +1,26 @@
 ---
-layout: archive
+layout: academic
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: false
+page_class: "cv-page"
 redirect_from:
   - /resume
 ---
 
-[Download CV (PDF)](/files/cv_1.pdf){: .btn .btn--primary}
+<a class="cv-download" href="/files/cv_1.pdf">Download CV (PDF)</a>
 
-**Email:** [yshiyu@link.cuhk.edu.hk](mailto:yshiyu@link.cuhk.edu.hk)\\
-**Phone:** [+852 4434 6668](tel:+85244346668)
+<p class="cv-contact"><strong>Email</strong> <a href="mailto:yshiyu@link.cuhk.edu.hk">yshiyu@link.cuhk.edu.hk</a><br><strong>Phone</strong> <a href="tel:+85244346668">+852 4434 6668</a></p>
 
 ## Education
 
-**MPhil in Physics**, The Chinese University of Hong Kong, Aug 2024–Oct 2026 (expected)\\
-Postgraduate Studentship
-
-**BSc in Physics**, Sun Yat-sen University, Sep 2020–Jul 2024\\
-GPA 3.9 / 4.0 (Top 5%); Outstanding Graduate; Outstanding Graduation Thesis
+{% include academic/education-row.html degree="MPhil in Physics" institution="The Chinese University of Hong Kong" dates="Aug 2024–Oct 2026 (expected)" note="Postgraduate Studentship" %}
+{% include academic/education-row.html degree="BSc in Physics" institution="Sun Yat-sen University" dates="Sep 2020–Jul 2024" note="GPA 3.9/4.0 (Top 5%) · Outstanding Graduate · Outstanding Graduation Thesis" %}
 
 ## Research and technical experience
 
-**Photoionisation Model Inference with Cloudy and MaNGA**, The Chinese University of Hong Kong, Aug 2024–Present
-: Built a Python and Cloudy workflow for MaNGA integral-field spectroscopy, large model grids, 3D line-ratio diagnostics, and per-spaxel Bayesian inference. Revised model configurations approximately halved the [S III] discrepancy. Related work was submitted to *Astronomy & Astrophysics* in Aug 2026.
+**The [S III] Discrepancy in Star-Forming Galaxies**, The Chinese University of Hong Kong, Aug 2024–Oct 2026 (expected)
+: Built a Python and Cloudy workflow for MaNGA integral-field spectroscopy, large model grids, 3D line-ratio diagnostics, and per-spaxel Bayesian inference. The tested abundance shifts do not reconcile the diagnostics jointly; ionising-SED shape and model physics remain leading directions. Related work was submitted to *Astronomy & Astrophysics* in Aug 2026.
 
 **Fast Statistical Algorithms for Cosmology**, Sun Yat-sen University, Oct 2021–Oct 2024
 : Developed an O(N log N) correlation-function workflow in C++ and OpenMP, validated it against theory and simulations with more than 10⁸ particles, and completed MDPL2-scale measurements in under eight hours. First-author paper published in *MNRAS*.

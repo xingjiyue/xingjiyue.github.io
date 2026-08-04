@@ -1,8 +1,8 @@
 ---
-layout: archive
+layout: academic
 title: "Contact"
 permalink: /contact/
-author_profile: true
+author_profile: false
 ---
 
 **Email** — [yshiyu@link.cuhk.edu.hk](mailto:yshiyu@link.cuhk.edu.hk)
