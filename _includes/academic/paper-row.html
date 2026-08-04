@@ -1,0 +1,11 @@
+<article class="paper-row">
+  <a class="paper-row__visual" href="{{ include.item.project_url | default: include.item.url }}" aria-label="Read {{ include.item.title }}">
+    <img class="paper-row__image" src="{{ include.item.thumbnail }}" alt="{{ include.item.thumbnail_alt }}" loading="lazy">
+  </a>
+  <div>
+    <p class="paper-row__meta">{{ include.item.display_status }}</p>
+    <h3 class="paper-row__title"><a href="{{ include.item.project_url | default: include.item.url }}">{{ include.item.title }}</a></h3>
+    <p>{{ include.item.contribution }}</p>
+    {% include academic/link-row.html details_url=include.item.project_url paper_url=include.item.paperurl talk_url=include.item.talk_url code_url=include.item.code_url %}
+  </div>
+</article>

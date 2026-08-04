@@ -1,0 +1,17 @@
+<article class="project-summary">
+  <div>
+    <img class="project-summary__image" src="{{ include.item.thumbnail }}" alt="{{ include.item.thumbnail_alt }}" loading="lazy">
+    <p class="project-summary__caption">{{ include.item.thumbnail_caption }}</p>
+  </div>
+  <div>
+    <p class="project-summary__meta">{{ include.item.institution }} · {{ include.item.role }} · {{ include.item.period }}</p>
+    <h3 class="project-summary__title"><a href="{{ include.item.url }}">{{ include.item.title }}</a></h3>
+    <p><strong>Research question.</strong> {{ include.item.research_question }}</p>
+    <dl class="project-summary__facts">
+      <dt>What I built</dt><dd>{{ include.item.built }}</dd>
+      <dt>How I tested it</dt><dd>{{ include.item.validation }}</dd>
+      <dt>Result / output</dt><dd>{{ include.item.result }}</dd>
+    </dl>
+    {% include academic/link-row.html details_url=include.item.url paper_url=include.item.paper_url talk_url=include.item.talk_url code_url=include.item.code_url %}
+  </div>
+</article>

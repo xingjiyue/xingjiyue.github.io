@@ -1,0 +1,5 @@
+<article class="talk-entry">
+  <p class="talk-entry__meta">{{ include.item.display_type }} · {{ include.item.display_date }}</p>
+  <h3><a href="{{ include.item.url }}">{{ include.item.title }}</a></h3>
+  <p>{{ include.item.venue }}{% if include.item.award %} · {{ include.item.award }}{% endif %}</p>
+</article>

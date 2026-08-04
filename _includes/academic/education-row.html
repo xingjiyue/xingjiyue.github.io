@@ -1,0 +1,8 @@
+<div class="education-row">
+  <div class="education-row__primary">
+    <strong>{{ include.degree }}</strong>
+    <span>{{ include.institution }}</span>
+  </div>
+  <time>{{ include.dates }}</time>
+  {% if include.note %}<p>{{ include.note }}</p>{% endif %}
+</div>

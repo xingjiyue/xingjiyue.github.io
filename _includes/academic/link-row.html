@@ -1,0 +1,8 @@
+{% if include.details_url or include.paper_url or include.talk_url or include.code_url %}
+<div class="link-row" aria-label="Related links">
+  {% if include.details_url %}<a href="{{ include.details_url }}">Read details</a>{% endif %}
+  {% if include.paper_url %}<a href="{{ include.paper_url }}">Paper</a>{% endif %}
+  {% if include.talk_url %}<a href="{{ include.talk_url }}">Talk</a>{% endif %}
+  {% if include.code_url %}<a href="{{ include.code_url }}">Code</a>{% endif %}
+</div>
+{% endif %}

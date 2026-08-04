@@ -1,0 +1,4 @@
+<div class="news-row">
+  <time>{{ include.date }}</time>
+  <p>{% if include.url %}<a href="{{ include.url }}">{{ include.text }}</a>{% else %}{{ include.text }}{% endif %}</p>
+</div>

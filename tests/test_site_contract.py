@@ -43,5 +43,27 @@ class SiteShellContractTests(unittest.TestCase):
             self.assertIn(selector, css)
 
 
+class ComponentContractTests(unittest.TestCase):
+    def test_figure_component_is_accessible(self):
+        figure = read("_includes/academic/figure.html")
+        self.assertIn('alt="{{ include.alt }}"', figure)
+        self.assertIn("<figcaption>", figure)
+
+    def test_optional_links_are_guarded(self):
+        links = read("_includes/academic/link-row.html")
+        for key in ("paper_url", "talk_url", "code_url", "details_url"):
+            self.assertIn(f"if include.{key}", links)
+
+    def test_all_reusable_components_exist(self):
+        for name in (
+            "education-row.html",
+            "news-row.html",
+            "paper-row.html",
+            "project-summary.html",
+            "talk-entry.html",
+        ):
+            self.assertTrue((ROOT / "_includes" / "academic" / name).is_file())
+
+
 if __name__ == "__main__":
     unittest.main()
