@@ -26,14 +26,44 @@ figures:
     caption: "The measured signal agrees with the binning-corrected prediction; ignoring binning produces visible scale-dependent offsets."
 ---
 
-The three-point correlation function (3PCF) is a key probe of large-scale structure that captures non-Gaussian information beyond the two-point function, but conventional estimators become computationally prohibitive at the scales and precision demanded by modern surveys. This project developed a new theoretical framework for 3PCF estimation that reformulates the problem from a brute-force counting exercise into a scalable signal-processing pipeline.
+## Research question
 
-**Approach.** Rather than looping over galaxy triplets — an O(N³) operation — I reframed binned pair-counting as an in-situ convolution on the density field. This insight transforms the 3PCF into a sequence of filtering operations, each amenable to fast Fourier methods. The resulting algorithm achieves O(N log N) scaling, making it feasible to process datasets with hundreds of millions of particles.
+Can the three-point correlation function (3PCF) be measured at modern simulation scale without the explicit catalogue triplet counting that makes conventional estimators prohibitively expensive?
 
-**Implementation.** I built the full measurement pipeline in C++ with OpenMP shared-memory parallelism, targeting multi-core CPU architectures. The pipeline ingests particle catalogues, constructs density fields on adaptive meshes, performs the convolution-based estimator, and outputs multipole-expanded 3PCF measurements in Legendre polynomial bases. I validated the implementation against analytical predictions from binning-corrected tree-level perturbation theory, confirming agreement to within approximately five percent in the quasilinear regime. On the MDPL2 dark-matter simulation — containing more than 10⁸ particles — the pipeline completes a full 3PCF measurement in under eight hours on a single compute node.
+## My role
 
-**Testing and robustness.** I applied the method to Quijote halo catalogues to study how sparse-tracer sampling, shot noise, and filter-scale choices affect the recovered signal. This work directly informed the design of the estimator's window-function treatment and filtering strategies, ensuring that theoretical predictions and measurements share consistent binning conventions.
+I developed the binning-aware formalism, implemented the measurement pipeline in C++ with OpenMP, designed the numerical tests, and led the first-author MNRAS paper.
 
-**Related publication:** [Pair counting without binning – a new approach to correlation functions in clustering statistics](https://doi.org/10.1093/mnras/stae2513) (*MNRAS*, 2024, first author).
+## At a glance
 
-**Skills:** C++, OpenMP, algorithm design, large-scale structure statistics, simulation validation, performance profiling.
+- **Domain:** large-scale-structure statistics and cosmological simulations
+- **Core idea:** treat binned pair counting as in-situ convolution of density and reference fields
+- **Implementation:** C++, OpenMP, multiresolution filtering, and FFT-based operations
+- **Output:** first-author paper in *Monthly Notices of the Royal Astronomical Society*
+
+## What I built
+
+I built a pipeline that constructs density and reference fields, filters them at the vertices of sampled triangle configurations, and evaluates the resulting three-point statistic with consistent bin definitions. The computational route scales as O(N log N), replacing catalogue-level triplet enumeration with field operations.
+
+## Method
+
+The formalism connects finite separation bins to window functions in a multiresolution space. For each triangle configuration, filtered fields are evaluated at its vertices and combined in an edge-corrected estimator. The same window functions enter the perturbation-theory prediction, so measurement and theory use the same binning convention.
+
+{% assign method_figure = page.figures[0] %}
+{% include academic/figure.html src=method_figure.src alt=method_figure.alt caption=method_figure.caption %}
+
+## Validation
+
+I tested the estimator against binning-corrected tree-level perturbation theory and measurements from MDPL2. Quijote halo catalogues were used to examine sparse-tracer behavior, shot noise, and filter-scale choices. In the published setup, the MDPL2 measurement used more than 10<sup>8</sup> particles and completed in under eight hours on a single compute node.
+
+{% assign result_figure = page.figures[1] %}
+{% include academic/figure.html src=result_figure.src alt=result_figure.alt caption=result_figure.caption %}
+
+## Results
+
+The measurements follow the binning-corrected theory at the few-percent level in the quasilinear regime. The comparison also shows why treating bins only after evaluation can generate scale-dependent disagreement, especially for broader filters.
+
+## Outputs
+
+- [Published MNRAS paper](https://doi.org/10.1093/mnras/stae2513)
+- Reusable C++/OpenMP measurement workflow for large simulation catalogues

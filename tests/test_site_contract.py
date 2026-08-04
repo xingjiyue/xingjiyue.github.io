@@ -156,5 +156,42 @@ class PortfolioContractTests(unittest.TestCase):
         self.assertEqual(landing.count("include academic/project-summary.html"), 5)
 
 
+class ProjectDetailContractTests(unittest.TestCase):
+    EXPECTED_HEADINGS = (
+        "Research question",
+        "My role",
+        "At a glance",
+        "What I built",
+        "Method",
+        "Validation",
+        "Results",
+        "Outputs",
+    )
+
+    def test_all_project_details_use_the_same_heading_order(self):
+        for path in sorted((ROOT / "_portfolio").glob("*.md")):
+            body = path.read_text(encoding="utf-8").split("---", 2)[2]
+            headings = tuple(re.findall(r"(?m)^## (.+)$", body))
+            self.assertEqual(headings, self.EXPECTED_HEADINGS, path.name)
+
+    def test_each_project_renders_every_declared_figure(self):
+        expected = {
+            "2024-08-01-cloudy-manga.md": 2,
+            "2024-10-01-3pcf-fast-algorithm.md": 2,
+            "2024-12-01-frdeep-xai.md": 2,
+            "2025-03-01-cspn-multimodal.md": 1,
+            "2026-05-01-ai-workflow-automation.md": 1,
+        }
+        for filename, count in expected.items():
+            body = read(f"_portfolio/{filename}").split("---", 2)[2]
+            self.assertEqual(body.count("include academic/figure.html"), count, filename)
+
+    def test_stale_project_claims_are_removed(self):
+        source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "_portfolio").glob("*.md"))
+        self.assertNotIn("approximately halved", source)
+        self.assertNotIn("reduces this discrepancy by roughly half", source)
+        self.assertNotIn("ongoing IPHAS", source)
+
+
 if __name__ == "__main__":
     unittest.main()

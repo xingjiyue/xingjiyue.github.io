@@ -1,0 +1,7 @@
+<header class="project-hero">
+  <p class="project-hero__status">{{ include.item.status }}</p>
+  <h1 class="project-hero__title">{{ include.item.title }}</h1>
+  <p class="project-hero__meta">{{ include.item.institution }} · {{ include.item.role }} · {{ include.item.period }}</p>
+  <p class="project-hero__question">{{ include.item.research_question }}</p>
+  {% include academic/link-row.html paper_url=include.item.paper_url talk_url=include.item.talk_url code_url=include.item.code_url %}
+</header>

@@ -3,7 +3,7 @@ layout: default
 ---
 <main id="main" class="academic-shell" role="main">
   <article class="academic-page{% if page.page_class %} {{ page.page_class }}{% endif %}">
-    {% unless page.hide_title %}
+    {% unless page.hide_title or page.layout == "project" %}
       <header class="academic-page__header">
         {% if page.kicker %}<p class="academic-page__kicker">{{ page.kicker }}</p>{% endif %}
         <h1 class="academic-page__title">{{ page.title }}</h1>

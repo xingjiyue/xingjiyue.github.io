@@ -26,16 +26,46 @@ figures:
     caption: "Hotspots and lobes contribute strongly, while background influence exposes an interpretable failure mode to audit."
 ---
 
-**Sun Yat-sen University / Tsinghua University · Jul 2021 – Oct 2024**
+## Research question
 
-Deep learning can classify radio-galaxy morphology accurately, but accuracy alone does not show whether a model relies on physically meaningful structure. This project combined classification, interpretability, data-quality analysis, and a component-based Transformer extension to examine both model performance and model reasoning.
+When a radio-galaxy classifier reaches high accuracy, is it using jets, lobes, and hotspots, or is it relying on background structure, image artefacts, or inconsistent labels?
 
-**CNN and data-quality evaluation.** I curated and quality-tagged 650 radio images and trained a PyTorch CNN using source-level five-fold cross-validation. The classifier achieved 91.4% mean test accuracy. Reviewing labels, cutouts, and source quality made it possible to separate model limitations from defects in the underlying data.
+## My role
 
-**LIME interpretation.** I built a Local Interpretable Model-agnostic Explanations workflow using Felzenszwalb superpixel segmentation and repeated perturbations. Custom overlays showed whether predictions were driven by jets, lobes, hotspots, background structure, or imaging artefacts. The audit translated individual explanations into concrete data-cleaning, relabelling, and retraining recommendations.
+Across the Sun Yat-sen University / Tsinghua University collaboration, I reviewed the dataset, trained and evaluated the CNN, built the LIME interpretation pipeline, analyzed failure modes, and implemented the masked Set Transformer extension.
 
-**Masked Set Transformer extension.** I also represented each radio source as a variable-length set of detected components. A masked Set Transformer used multi-head self-attention and attention pooling to model interactions between those components without forcing every source into a fixed-length image representation. This extension is presented as implemented work; no unverified performance improvement over the CNN is claimed.
+## At a glance
 
-**Research outputs:** [A model local interpretation routine for deep learning based radio galaxy classification](https://www.ursi.org/proceedings/procGA23/papers/YSASummaryHongmingTang.pdf) (IEEE URSI GASS 2023, co-first author) and *Can I trust you?: Interpreting radio galaxy classifier with FR-DEEP dataset and eXplainable AI* (ApJS, under revision).
+- **Period:** Jul 2021–Oct 2024
+- **Data:** 650 reviewed FR-DEEP radio images
+- **Evaluation:** source-level five-fold splits; 91.4% mean test accuracy
+- **Interpretability:** Felzenszwalb segmentation and repeated LIME perturbations
+- **Status:** ApJS manuscript under revision
 
-**Skills:** Python, PyTorch, CNNs, LIME, Felzenszwalb segmentation, Set Transformers, model evaluation, data-quality analysis, failure analysis.
+## What I built
+
+I built a PyTorch CNN workflow with quality tagging and source-level evaluation, then added custom LIME visualizations that rank positive and negative superpixel contributions. I also implemented a masked Set Transformer for variable-length sets of detected radio-source components.
+
+## Method
+
+The interpretability workflow compares segmentation schemes before applying LIME. Felzenszwalb superpixels were used to perturb locally coherent regions, and the resulting weights were rendered in multiple modes so that differences between jets, lobes, hotspots, cores, background, and artefacts could be inspected consistently.
+
+{% assign method_figure = page.figures[0] %}
+{% include academic/figure.html src=method_figure.src alt=method_figure.alt caption=method_figure.caption %}
+
+## Validation
+
+I reviewed labels and cutouts for all 650 images and used source-level five-fold evaluation to reduce leakage between related samples. Explanations were grouped by physical and non-physical feature types, allowing accuracy, data quality, and model rationale to be assessed separately.
+
+{% assign result_figure = page.figures[1] %}
+{% include academic/figure.html src=result_figure.src alt=result_figure.alt caption=result_figure.caption %}
+
+## Results
+
+The CNN achieved 91.4% mean test accuracy. LIME showed that hotspots and lobes often contribute as expected, while background dependence and unusual source structure expose cases requiring data cleaning, label review, or retraining. The Set Transformer is reported as implemented work; no unverified performance improvement over the CNN is claimed.
+
+## Outputs
+
+- *Can I trust you?: Interpreting radio galaxy classifier with FR-DEEP dataset and eXplainable AI* — ApJS, under revision
+- [IEEE URSI GASS 2023 conference proceeding](https://www.ursi.org/proceedings/procGA23/papers/YSASummaryHongmingTang.pdf)
+- [Related invited talk](/talks/2023-11-ml-astronomy)

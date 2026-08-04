@@ -22,14 +22,41 @@ figures:
     caption: "The model proposes structured content while schema checks, retry paths, retained evidence, and human review control downstream decisions."
 ---
 
-**Personal engineering project · Mar 2026 – May 2026**
+## Research question
 
-This project explored how a multi-stage AI workflow could turn unstructured web and API inputs into traceable, reviewable summaries without treating model output as an autonomous final decision.
+How can language-model assistance be integrated into a multi-stage workflow while keeping evidence, failure paths, and the final decision reviewable?
 
-**Workflow design.** I used n8n and Dify to coordinate ingestion, normalisation, deduplication, retrieval-augmented generation, and LLM-assisted assessment. Explicit structured-output contracts passed state between stages and made downstream routing predictable.
+## My role
 
-**Reliability and review.** The workflow included schema validation, conditional routing, retries, error logging, state tracking, email notifications, and human-review checkpoints. Intermediate evidence and decisions were retained so that failures could be isolated and outputs could be checked before action.
+I designed and implemented this personal engineering project from Mar–May 2026, including the data contracts, orchestration logic, retry paths, notifications, and human-review checkpoint.
 
-**Scope.** This was a personal engineering project rather than a production or commercial deployment. Its value lies in modular workflow design, traceability, and controlled use of language models.
+## At a glance
 
-**Skills:** n8n, Dify, RAG, structured outputs, workflow orchestration, validation, retry handling, logging, human-in-the-loop review.
+- **Orchestration:** n8n and Dify
+- **Inputs:** web and API content
+- **Controls:** structured schemas, conditional routing, retries, logs, and state tracking
+- **Scope:** completed personal prototype, not a commercial or production deployment
+
+## What I built
+
+The workflow ingests and normalizes source material, removes duplicates, retrieves supporting evidence, requests schema-constrained model output, validates it, and routes success or failure states to explicit downstream branches.
+
+## Method
+
+Each stage passes structured state rather than prose alone. Validation failures enter controlled retry or review paths; successful outputs retain their supporting evidence. Logging and state records make it possible to identify where an invalid or incomplete result entered the workflow.
+
+{% assign workflow_figure = page.figures[0] %}
+{% include academic/figure.html src=workflow_figure.src alt=workflow_figure.alt caption=workflow_figure.caption %}
+
+## Validation
+
+I tested schema enforcement, conditional branches, retry behavior, error logging, email notifications, and human-review handoff. Intermediate evidence and state were retained so individual failures could be inspected without treating the model as an autonomous decision maker.
+
+## Results
+
+The result was a traceable personal workflow prototype with modular ingestion, retrieval, validation, routing, and review stages. No commercial deployment, production ownership, or unsupported performance metric is claimed.
+
+## Outputs
+
+- Reusable workflow architecture and structured-output contracts
+- End-to-end validation, logging, notification, and human-review design
