@@ -1,32 +1,52 @@
 ---
+layout: academic
 permalink: /
 title: "Shiyu Yue"
-author_profile: true
+hide_title: true
+author_profile: false
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am an MPhil candidate in Physics at [The Chinese University of Hong Kong](https://www.phy.cuhk.edu.hk/), with expected completion in October 2026. My research spans cosmological statistics, interpretable machine learning, and Bayesian model–data analysis.
+<section class="profile-hero">
+  <div class="profile-hero__copy">
+    <p class="profile-hero__eyebrow">Physics MPhil candidate · The Chinese University of Hong Kong</p>
+    <h1 class="profile-hero__name">Shiyu Yue</h1>
+    <p class="profile-hero__intro">I develop scalable statistical algorithms, interpretable machine-learning methods, and Bayesian model–data pipelines for astronomical data.</p>
+    <div class="profile-hero__education" aria-label="Education">
+      {% include academic/education-row.html degree="MPhil in Physics" institution="The Chinese University of Hong Kong" dates="Aug 2024–Oct 2026 (expected)" note="Postgraduate Studentship" %}
+      {% include academic/education-row.html degree="BSc in Physics" institution="Sun Yat-sen University" dates="Sep 2020–Jul 2024" note="GPA 3.9/4.0 (Top 5%) · Outstanding Graduate · Outstanding Graduation Thesis" %}
+    </div>
+    <nav class="profile-hero__links" aria-label="Profile links">
+      <a href="mailto:yshiyu@link.cuhk.edu.hk">Email</a>
+      <a href="/files/cv_1.pdf">CV</a>
+      <a href="https://github.com/xingjiyue">GitHub</a>
+      <a href="https://www.linkedin.com/in/shiyu-yue-314b3238b">LinkedIn</a>
+    </nav>
+  </div>
+  <img class="profile-hero__portrait" src="/images/photo.jpg" alt="Portrait of Shiyu Yue" width="184" height="224">
+</section>
 
-I develop computational methods that connect physical questions with reliable evidence: deriving statistical approaches, implementing scalable research software, and validating results against simulations and observations.
+<div class="section-heading">
+  <h2>Selected work</h2>
+  <a href="/publications/">All publications</a>
+</div>
 
-## Recent news
+{% assign pair_counting = site.publications | where: "permalink", "/publication/2024-pair-counting-without-binning" | first %}
+{% include academic/paper-row.html item=pair_counting %}
 
-- **Aug 2026** — Work on the [S III] discrepancy submitted to *Astronomy & Astrophysics*. [Project overview](/portfolio/2024-08-01-cloudy-manga/)
-- **Feb 2025** — *"Can I Trust You?"* under revision at *The Astrophysical Journal Supplement Series*.
-- **Dec 2024** — *"Pair Counting Without Binning"* published in *Monthly Notices of the Royal Astronomical Society*, 535(4).
-- **Aug 2024** — Began an MPhil in Physics at CUHK with a Postgraduate Studentship.
+{% assign frdeep = site.publications | where: "permalink", "/publication/2025-can-i-trust-you" | first %}
+{% include academic/paper-row.html item=frdeep %}
 
-## Research interests
+{% assign siii = site.publications | where: "permalink", "/publication/2026-siii-discrepancy-aa" | first %}
+{% include academic/paper-row.html item=siii %}
 
-Large-scale structure statistics · Two- and three-point correlation functions · Bayesian inference · Interpretable deep learning · Radio-galaxy morphology · Integral-field spectroscopy · Photoionisation modelling · Cosmological simulations · Multi-source astronomical data
+<div class="section-heading">
+  <h2>Recent news</h2>
+</div>
 
-## Research highlights
-
-- **Fast 3PCF algorithm:** Developed an O(N log N) three-point correlation-function workflow in C++ and OpenMP, validated on simulations with more than 10<sup>8</sup> particles and measured at MDPL2 scale in under eight hours.
-- **Interpretable radio-galaxy ML:** Built a CNN and LIME-based audit workflow for 650 FR-DEEP images, achieving 91.4% mean test accuracy across source-level folds, and extended the work with a masked Set Transformer for variable-length source-component data.
-- **Cloudy and MaNGA inference:** Built a Python workflow for large photoionisation-model grids, 3D line-ratio diagnostics, and per-spaxel Bayesian inference; revised models approximately halved the [S III] discrepancy.
-- **CSPN candidate selection:** Integrated four heterogeneous survey sources, applied coordinate-based matching and Gaia validation, and explored a multimodal extension combining imaging and tabular features.
-
-[View CV (PDF)](/files/cv_1.pdf){: .btn .btn--primary} [Publications](/publications/){: .btn}
+{% include academic/news-row.html date="Aug 2026" text="[S III] discrepancy manuscript submitted to Astronomy & Astrophysics." url="/portfolio/2024-08-01-cloudy-manga/" %}
+{% include academic/news-row.html date="May 2026" text="Presented the [S III] discrepancy work at the Guo Shoujing Telescope Workshop." url="/talks/2026-05-guoshoujing" %}
+{% include academic/news-row.html date="Feb 2025" text="“Can I trust you?” manuscript under revision at ApJS." url="/publication/2025-can-i-trust-you" %}
+{% include academic/news-row.html date="Dec 2024" text="“Pair counting without binning” published in MNRAS 535(4)." url="https://doi.org/10.1093/mnras/stae2513" %}

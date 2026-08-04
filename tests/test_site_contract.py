@@ -92,5 +92,23 @@ class ProjectFigureContractTests(unittest.TestCase):
                 self.assertNotIn(temporary, source, path.name)
 
 
+class HomepageContractTests(unittest.TestCase):
+    def test_homepage_uses_academic_hero_and_three_paper_rows(self):
+        homepage = read("_pages/about.md")
+        self.assertIn("layout: academic", homepage)
+        self.assertIn("hide_title: true", homepage)
+        self.assertIn("/images/photo.jpg", homepage)
+        self.assertIn("Aug 2024–Oct 2026 (expected)", homepage)
+        self.assertIn("Sep 2020–Jul 2024", homepage)
+        self.assertIn("yshiyu@link.cuhk.edu.hk", homepage)
+        self.assertEqual(homepage.count("include academic/paper-row.html"), 3)
+
+    def test_homepage_omits_private_or_redundant_content(self):
+        homepage = read("_pages/about.md")
+        self.assertNotIn("+852 4434 6668", homepage)
+        self.assertNotIn("## Research interests", homepage)
+        self.assertNotIn("approximately halved", homepage)
+
+
 if __name__ == "__main__":
     unittest.main()
