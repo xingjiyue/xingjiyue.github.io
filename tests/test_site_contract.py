@@ -306,6 +306,10 @@ class IdentityAndPrivacyContractTests(unittest.TestCase):
         self.assertIn("redirect_to: /portfolio/", research)
         self.assertNotIn("## Research directions", research)
 
+    def test_cv_definition_lists_collapse_to_one_column_on_mobile(self):
+        css = read("_sass/layout/_academic.scss")
+        self.assertIn(".cv-page .academic-page__content > dl {\n    grid-template-columns: minmax(0, 1fr);", css)
+
 
 if __name__ == "__main__":
     unittest.main()

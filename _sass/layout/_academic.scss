@@ -382,6 +382,17 @@ $academic-link: #315f8c;
     grid-column: 1;
   }
 
+  .cv-page .academic-page__content > dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .cv-page .academic-page__content > dl dd {
+    min-width: 0;
+    margin: 0 0 14px;
+    overflow-wrap: anywhere;
+  }
+
   .profile-hero {
     grid-template-columns: 1fr;
     gap: 26px;
