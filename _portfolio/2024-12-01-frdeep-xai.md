@@ -1,9 +1,29 @@
 ---
-title: "Interpretable Radio Galaxy Classification with FR-DEEP"
+title: "Can I trust you?: Interpreting radio galaxy classifier with FR-DEEP dataset and eXplainable AI"
 excerpt: "Developed CNN and LIME-based workflows for radio-galaxy morphology classification, then extended the project with a masked Set Transformer for variable-length source-component data."
 collection: portfolio
 permalink: /portfolio/2024-12-01-frdeep-xai/
 date: 2024-12-01
+category: "Research Projects"
+institution: "Sun Yat-sen University / Tsinghua University"
+role: "Researcher · journal-manuscript first author"
+period: "Jul 2021–Oct 2024"
+status: "ApJS · under revision"
+research_question: "Does a high-accuracy radio-galaxy classifier rely on physically meaningful morphology or on background and data artefacts?"
+built: "A CNN classifier, Felzenszwalb/LIME audit workflow, and masked Set Transformer extension."
+validation: "A review of 650 images and source-level five-fold evaluation."
+result: "91.4% mean test accuracy plus identified data and model failure modes; no Transformer superiority claim."
+thumbnail: "/images/projects/frdeep-method.png"
+thumbnail_alt: "A radio galaxy image shown with several segmentation methods including Felzenszwalb superpixels"
+thumbnail_caption: "Segmentation choice determines which source structures can be perturbed and attributed by LIME."
+talk_url: "/talks/2023-11-ml-astronomy"
+figures:
+  - src: "/images/projects/frdeep-method.png"
+    alt: "Radio galaxy image compared across quickshift, Felzenszwalb, SLIC, and watershed segmentation"
+    caption: "Felzenszwalb segmentation follows the compact source morphology more closely than fixed-grid alternatives in this example."
+  - src: "/images/projects/frdeep-results.png"
+    alt: "Bar chart of how often physical and non-physical features contributed to FR-DEEP predictions"
+    caption: "Hotspots and lobes contribute strongly, while background influence exposes an interpretable failure mode to audit."
 ---
 
 **Sun Yat-sen University / Tsinghua University · Jul 2021 – Oct 2024**

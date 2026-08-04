@@ -110,5 +110,51 @@ class HomepageContractTests(unittest.TestCase):
         self.assertNotIn("approximately halved", homepage)
 
 
+class PortfolioContractTests(unittest.TestCase):
+    REQUIRED_KEYS = (
+        "title",
+        "category",
+        "institution",
+        "role",
+        "period",
+        "status",
+        "research_question",
+        "built",
+        "validation",
+        "result",
+        "thumbnail",
+        "thumbnail_alt",
+        "figures",
+    )
+
+    def test_all_projects_have_structured_metadata(self):
+        projects = sorted((ROOT / "_portfolio").glob("*.md"))
+        self.assertEqual(len(projects), 5)
+        for path in projects:
+            source = path.read_text(encoding="utf-8")
+            front_matter = source.split("---", 2)[1]
+            for key in self.REQUIRED_KEYS:
+                self.assertRegex(front_matter, rf"(?m)^{key}:", (path.name, key))
+
+    def test_paper_projects_have_two_figures_and_other_projects_have_one(self):
+        expected = {
+            "2024-08-01-cloudy-manga.md": 2,
+            "2024-10-01-3pcf-fast-algorithm.md": 2,
+            "2024-12-01-frdeep-xai.md": 2,
+            "2025-03-01-cspn-multimodal.md": 1,
+            "2026-05-01-ai-workflow-automation.md": 1,
+        }
+        for filename, count in expected.items():
+            source = read(f"_portfolio/{filename}")
+            front_matter = source.split("---", 2)[1]
+            self.assertEqual(front_matter.count("  - src:"), count, filename)
+
+    def test_projects_page_renders_four_research_and_one_engineering_summary(self):
+        landing = read("_pages/portfolio.html")
+        self.assertIn("Research Projects", landing)
+        self.assertIn("Engineering Project", landing)
+        self.assertEqual(landing.count("include academic/project-summary.html"), 5)
+
+
 if __name__ == "__main__":
     unittest.main()
