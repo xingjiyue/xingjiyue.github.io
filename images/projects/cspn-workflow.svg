@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Planetary-nebula central-star candidate workflow</title>
+  <desc id="desc">HASH targets are reconciled with PanSTARRS and DECaPS sources, checked for positional offsets and duplicates, validated with Gaia astrometry, and reviewed as a candidate list.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#315f8c"/></marker>
+  </defs>
+  <rect width="1200" height="500" rx="18" fill="#fbfaf7"/>
+  <text x="60" y="70" font-family="Georgia, serif" font-size="34" fill="#202124">Candidate selection from heterogeneous survey data</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20" fill="#202124" text-anchor="middle">
+    <g><rect x="55" y="175" width="170" height="110" rx="12" fill="#fff" stroke="#9aa3aa"/><text x="140" y="225">HASH</text><text x="140" y="253" font-size="16" fill="#62666d">target list</text></g>
+    <g><rect x="285" y="145" width="220" height="170" rx="12" fill="#fff" stroke="#9aa3aa"/><text x="395" y="205">PanSTARRS</text><text x="395" y="238">+</text><text x="395" y="273">DECaPS</text><text x="395" y="298" font-size="16" fill="#62666d">source reconciliation</text></g>
+    <g><rect x="565" y="145" width="220" height="170" rx="12" fill="#fff" stroke="#9aa3aa"/><text x="675" y="205">Coordinate offsets</text><text x="675" y="238">+</text><text x="675" y="273">duplicate control</text></g>
+    <g><rect x="845" y="175" width="160" height="110" rx="12" fill="#fff" stroke="#9aa3aa"/><text x="925" y="225">Gaia</text><text x="925" y="253" font-size="16" fill="#62666d">validation</text></g>
+    <g><rect x="1045" y="175" width="120" height="110" rx="12" fill="#eef3f7" stroke="#315f8c"/><text x="1105" y="220">Reviewed</text><text x="1105" y="250">candidates</text></g>
+  </g>
+  <g stroke="#315f8c" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M225 230 H275"/><path d="M505 230 H555"/><path d="M785 230 H835"/><path d="M1005 230 H1035"/>
+  </g>
+  <text x="60" y="405" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="19" fill="#62666d">Each stage retains source identifiers and review evidence so that matches and rejections remain traceable.</text>
+</svg>

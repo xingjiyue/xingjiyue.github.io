@@ -65,5 +65,32 @@ class ComponentContractTests(unittest.TestCase):
             self.assertTrue((ROOT / "_includes" / "academic" / name).is_file())
 
 
+class ProjectFigureContractTests(unittest.TestCase):
+    FIGURES = (
+        "3pcf-method.png",
+        "3pcf-validation.png",
+        "frdeep-method.png",
+        "frdeep-results.png",
+        "siii-method.png",
+        "siii-results.png",
+        "cspn-workflow.svg",
+        "ai-workflow.svg",
+    )
+
+    def test_project_figure_manifest(self):
+        for name in self.FIGURES:
+            path = ROOT / "images" / "projects" / name
+            self.assertTrue(path.is_file(), name)
+            self.assertGreater(path.stat().st_size, 200, name)
+            if path.suffix == ".png":
+                self.assertEqual(path.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
+
+    def test_project_sources_do_not_reference_temporary_directories(self):
+        for path in (ROOT / "_portfolio").glob("*.md"):
+            source = path.read_text(encoding="utf-8")
+            for temporary in ("tmp/", "_site/", ".superpowers/"):
+                self.assertNotIn(temporary, source, path.name)
+
+
 if __name__ == "__main__":
     unittest.main()
